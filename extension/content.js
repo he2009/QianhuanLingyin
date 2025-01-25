@@ -1378,7 +1378,7 @@ export let CONTENT = function (config, pack) {
                 if (dynamicExt.selectSkinData && dynamicExt.selectSkinData.value) dynamicExt.selectSkinData.value = keys[i];
               }
             }
-            var theme = ui.arena.dataset.newDecadeStyle == 'on' ? 'decade' : 'shousha';
+            var theme = ui.arena.dataset.newDecadeStyle == 'on' ? 'decade' : 'decade';
             // @ts-ignore
             if (lib.config['extension_千幻聆音_qhly_editDynamic'] && lib.qhly_skinEdit[realName] && lib.qhly_skinEdit[realName][skinName] && lib.qhly_skinEdit[realName][skinName].player && lib.qhly_skinEdit[realName][skinName].player.dynamic && lib.qhly_skinEdit[realName][skinName].player.dynamic[theme]) {
               // @ts-ignore

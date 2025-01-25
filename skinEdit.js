@@ -909,6 +909,38 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     }
                 }
             }
+        },
+        "温情良缘.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.52
+                        ],
+                        "y": [
+                            0,
+                            0.35
+                        ],
+                        "scale": 1.32,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.3
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.7800000000000001,
+                        "angle": 0
+                    }
+                }
+            }
         }
     },
     "tangji": {
@@ -2196,7 +2228,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.25,
+                        "scale": 0.4500000000000002,
                         "angle": 0
                     }
                 }
@@ -2354,10 +2386,34 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                         ],
                         "scale": 1.14,
                         "angle": 10
+                    },
+                    "shousha": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.35
+                        ],
+                        "scale": 1.14,
+                        "angle": 10
                     }
                 },
                 "beijing": {
                     "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.4400000000000001,
+                        "angle": 0
+                    },
+                    "shousha": {
                         "x": [
                             0,
                             0.5
@@ -3074,7 +3130,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.43
                         ],
-                        "scale": 1.02,
+                        "scale": 1.09,
                         "angle": -13
                     }
                 },
@@ -3088,7 +3144,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.34,
+                        "scale": 0.5300000000000001,
                         "angle": 0
                     }
                 }
@@ -8288,7 +8344,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.497
                         ],
-                        "scale": 0.25,
+                        "scale": 0.4900000000000002,
                         "angle": 0
                     }
                 }
@@ -11123,6 +11179,38 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     }
                 }
             }
+        },
+        "温情良缘.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.483
+                        ],
+                        "y": [
+                            0,
+                            0.32600000000000007
+                        ],
+                        "scale": 1.1400000000000001,
+                        "angle": -5
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.497
+                        ],
+                        "scale": 0.7000000000000001,
+                        "angle": 0
+                    }
+                }
+            }
         }
     },
     "xuangongzhu": {
@@ -12125,6 +12213,38 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0.5
                         ],
                         "scale": 0.3,
+                        "angle": 0
+                    }
+                }
+            }
+        },
+        "道敕寰宇.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.9290000000000016
+                        ],
+                        "y": [
+                            0,
+                            0.37200000000000005
+                        ],
+                        "scale": 1.2400000000000002,
+                        "angle": 6
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.69
+                        ],
+                        "y": [
+                            0,
+                            0.42
+                        ],
+                        "scale": 0.82,
                         "angle": 0
                     }
                 }
@@ -16792,13 +16912,13 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     "decade": {
                         "x": [
                             0,
-                            0.33199999999999996
+                            0.383
                         ],
                         "y": [
                             0,
-                            0.397
+                            0.40900000000000003
                         ],
-                        "scale": 1.05,
+                        "scale": 1.1500000000000001,
                         "angle": -5
                     }
                 },
@@ -16812,7 +16932,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.5800000000000002,
+                        "scale": 0.6400000000000002,
                         "angle": 0
                     }
                 }
@@ -18358,7 +18478,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.3500000000000001,
+                        "scale": 0.6500000000000004,
                         "angle": 0
                     }
                 }
@@ -18540,6 +18660,18 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                         ],
                         "scale": 1,
                         "angle": -5
+                    },
+                    "decade": {
+                        "x": [
+                            0,
+                            0.45
+                        ],
+                        "y": [
+                            0,
+                            0.45
+                        ],
+                        "scale": 1,
+                        "angle": -5
                     }
                 },
                 "beijing": {
@@ -18553,6 +18685,18 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0.5
                         ],
                         "scale": 0.4100000000000001,
+                        "angle": 0
+                    },
+                    "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.4000000000000001,
                         "angle": 0
                     }
                 }
@@ -18678,7 +18822,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.4,
+                        "scale": 0.4800000000000001,
                         "angle": 0
                     }
                 }
@@ -18768,6 +18912,18 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                         ],
                         "scale": 1.4500000000000002,
                         "angle": 15
+                    },
+                    "decade": {
+                        "x": [
+                            0,
+                            0.6369999999999999
+                        ],
+                        "y": [
+                            0,
+                            0.361
+                        ],
+                        "scale": 1.28,
+                        "angle": 15
                     }
                 },
                 "beijing": {
@@ -18781,6 +18937,18 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0.382
                         ],
                         "scale": 0.4,
+                        "angle": 0
+                    },
+                    "decade": {
+                        "x": [
+                            0,
+                            1.7
+                        ],
+                        "y": [
+                            0,
+                            0.37
+                        ],
+                        "scale": 0.6700000000000003,
                         "angle": 0
                     }
                 }
@@ -19357,6 +19525,310 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0.503
                         ],
                         "scale": 0.3700000000000001,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "liufeng": {
+        "焰魂锁身.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.547
+                        ],
+                        "y": [
+                            0,
+                            0.18
+                        ],
+                        "scale": 1.1600000000000001,
+                        "angle": 5
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.67,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "re_xunchen": {
+        "鸿雪寒山.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.45400000000000007
+                        ],
+                        "y": [
+                            0,
+                            0.372
+                        ],
+                        "scale": 1.2,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.4700000000000001,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "zhouyu": {
+        "兔年清明.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.463
+                        ],
+                        "y": [
+                            0,
+                            0.24
+                        ],
+                        "scale": 0.6100000000000001,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.3,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "sp_caoren": {
+        "殊死据守.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.25600000000000006
+                        ],
+                        "y": [
+                            0,
+                            0.20600000000000004
+                        ],
+                        "scale": 0.9400000000000002,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.8200000000000002,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "zhaoxiang": {
+        "月痕芳影.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.512
+                        ],
+                        "y": [
+                            0,
+                            0.478
+                        ],
+                        "scale": 0.9700000000000002,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.44
+                        ],
+                        "y": [
+                            0,
+                            0.52
+                        ],
+                        "scale": 0.74,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "re_chendeng": {
+        "润物德泽.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.47799999999999987
+                        ],
+                        "y": [
+                            0,
+                            0.444
+                        ],
+                        "scale": 1.08,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.533
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.5300000000000001,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "re_weiyan": {
+        "骁勇金衔.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.43
+                        ],
+                        "y": [
+                            0,
+                            0.453
+                        ],
+                        "scale": 1.07,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.38000000000000006,
+                        "angle": 0
+                    }
+                }
+            }
+        },
+        "誓死卫汉.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.046000000000000006
+                        ],
+                        "y": [
+                            0,
+                            0.385
+                        ],
+                        "scale": 0.8600000000000001,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.6,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "litong": {
+        "豫州扬威.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.4
+                        ],
+                        "y": [
+                            0,
+                            0.3
+                        ],
+                        "scale": 1.11,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.7100000000000001,
                         "angle": 0
                     }
                 }
