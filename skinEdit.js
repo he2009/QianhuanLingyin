@@ -2378,13 +2378,13 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     "decade": {
                         "x": [
                             0,
-                            0.5
+                            0.497
                         ],
                         "y": [
                             0,
-                            0.35
+                            0.41900000000000004
                         ],
-                        "scale": 1.14,
+                        "scale": 1.0999999999999999,
                         "angle": 10
                     },
                     "shousha": {
@@ -17746,9 +17746,9 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                         ],
                         "y": [
                             0,
-                            0.5
+                            0.503
                         ],
-                        "scale": 0.3,
+                        "scale": 0.4300000000000001,
                         "angle": 0
                     }
                 }
@@ -19829,6 +19829,40 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0.5
                         ],
                         "scale": 0.7100000000000001,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "sp_zhaoyun": {
+        "龙战于渊.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            -0.4219999999999998
+                        ],
+                        "y": [
+                            0,
+                            0.10900000000000001
+                        ],
+                        "scale": 1.1900000000000002,
+                        "angle": 17
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.2
+                        ],
+                        "y": [
+                            0,
+                            0.53
+                        ],
+                        "scale": 0.8100000000000003,
                         "angle": 0
                     }
                 }
