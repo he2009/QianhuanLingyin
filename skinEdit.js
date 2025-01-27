@@ -1901,6 +1901,38 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     }
                 }
             }
+        },
+        "共御风霜.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            1.3270000000000028
+                        ],
+                        "y": [
+                            0,
+                            0.673
+                        ],
+                        "scale": 1.7700000000000002,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            1.11
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.9000000000000001,
+                        "angle": 0
+                    }
+                }
+            }
         }
     },
     "ol_zhurong": {
@@ -2495,6 +2527,38 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     }
                 }
             }
+        },
+        "明良千古.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.3960000000000001
+                        ],
+                        "y": [
+                            0,
+                            0.15
+                        ],
+                        "scale": 0.7100000000000001,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            1.8
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.5800000000000002,
+                        "angle": 0
+                    }
+                }
+            }
         }
     },
     "shen_zhangjiao": {
@@ -3060,7 +3124,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.36000000000000004,
+                        "scale": 0.5600000000000002,
                         "angle": 0
                     }
                 }
@@ -4070,13 +4134,13 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     "decade": {
                         "x": [
                             0,
-                            0.4
+                            0.397
                         ],
                         "y": [
                             0,
                             0.5
                         ],
-                        "scale": 0.3,
+                        "scale": 0.46000000000000013,
                         "angle": -28
                     }
                 }
@@ -4096,7 +4160,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.332
                         ],
-                        "scale": 1.3900000000000001,
+                        "scale": 1.4400000000000002,
                         "angle": -22
                     },
                     "shousha": {
@@ -4122,7 +4186,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.4,
+                        "scale": 0.4900000000000001,
                         "angle": 0
                     },
                     "shousha": {
@@ -4580,7 +4644,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.449
                         ],
-                        "scale": 1.07,
+                        "scale": 1.12,
                         "angle": 0
                     }
                 },
@@ -4731,6 +4795,38 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     }
                 }
             }
+        },
+        "虚拟天团.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.44
+                        ],
+                        "y": [
+                            0,
+                            0.4
+                        ],
+                        "scale": 1.1700000000000002,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.3
+                        ],
+                        "y": [
+                            0,
+                            0
+                        ],
+                        "scale": 0.7600000000000001,
+                        "angle": 0
+                    }
+                }
+            }
         }
     },
     "licaiwei": {
@@ -4830,7 +4926,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.33,
+                        "scale": 0.4400000000000001,
                         "angle": 0
                     },
                     "shousha": {
@@ -6154,7 +6250,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.36600000000000005
                         ],
-                        "scale": 1.1,
+                        "scale": 1.1600000000000001,
                         "angle": -20
                     }
                 },
@@ -6168,7 +6264,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.3,
+                        "scale": 0.38000000000000006,
                         "angle": 0
                     }
                 }
@@ -13122,13 +13218,13 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     "decade": {
                         "x": [
                             0,
-                            0.459
+                            0.453
                         ],
                         "y": [
                             0,
-                            0.4770000000000001
+                            0.43200000000000005
                         ],
-                        "scale": 1.2100000000000002,
+                        "scale": 1.3300000000000003,
                         "angle": 0
                     }
                 },
@@ -13398,7 +13494,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.381
                         ],
-                        "scale": 1.1600000000000001,
+                        "scale": 1.2300000000000002,
                         "angle": 0
                     }
                 },
@@ -13410,9 +13506,9 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                         ],
                         "y": [
                             0,
-                            0.423
+                            0.426
                         ],
-                        "scale": 0.82,
+                        "scale": 1.02,
                         "angle": 0
                     }
                 }
@@ -13924,13 +14020,13 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     "decade": {
                         "x": [
                             0,
-                            0.4
+                            0.397
                         ],
                         "y": [
                             0,
                             0.5
                         ],
-                        "scale": 0.3,
+                        "scale": 0.6000000000000002,
                         "angle": 0
                     }
                 }
@@ -14168,7 +14264,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.6,
+                        "scale": 0.8500000000000002,
                         "angle": 0
                     }
                 }
@@ -17488,9 +17584,21 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                         ],
                         "y": [
                             0,
-                            0.29
+                            0.293
                         ],
                         "scale": 1.1800000000000002,
+                        "angle": 0
+                    },
+                    "shousha": {
+                        "x": [
+                            0,
+                            0.43
+                        ],
+                        "y": [
+                            0,
+                            0.293
+                        ],
+                        "scale": 1.2600000000000002,
                         "angle": 0
                     }
                 },
@@ -17505,6 +17613,18 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0.5
                         ],
                         "scale": 0.6,
+                        "angle": 0
+                    },
+                    "shousha": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.7800000000000001,
                         "angle": 0
                     }
                 }
@@ -17572,7 +17692,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.3,
+                        "scale": 0.49000000000000016,
                         "angle": 0
                     }
                 }
@@ -19863,6 +19983,40 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0.53
                         ],
                         "scale": 0.8100000000000003,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "re_yuanshao": {
+        "虚拟天团.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.44
+                        ],
+                        "y": [
+                            0,
+                            0.4
+                        ],
+                        "scale": 1.1700000000000002,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.3
+                        ],
+                        "y": [
+                            0,
+                            0
+                        ],
+                        "scale": 0.67,
                         "angle": 0
                     }
                 }
