@@ -2342,13 +2342,13 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     "decade": {
                         "x": [
                             0,
-                            0.38400000000000006
+                            0.37500000000000006
                         ],
                         "y": [
                             0,
-                            0.16699999999999998
+                            0.182
                         ],
-                        "scale": 0.55,
+                        "scale": 0.5900000000000001,
                         "angle": -5
                     }
                 },
@@ -2816,7 +2816,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.5
                         ],
-                        "scale": 0.33,
+                        "scale": 0.46000000000000013,
                         "angle": 0
                     },
                     "shousha": {
@@ -13678,13 +13678,13 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     "decade": {
                         "x": [
                             0,
-                            0.507
+                            0.519
                         ],
                         "y": [
                             0,
-                            0.21
+                            0.243
                         ],
-                        "scale": 0.9700000000000001,
+                        "scale": 1.02,
                         "angle": 0
                     }
                 },
@@ -13698,7 +13698,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.42
                         ],
-                        "scale": 0.82,
+                        "scale": 0.93,
                         "angle": 0
                     }
                 }
@@ -17135,6 +17135,38 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                     }
                 }
             }
+        },
+        "永开吴祚.jpg": {
+            "player": {
+                "dynamic": {
+                    "shousha": {
+                        "x": [
+                            0,
+                            0.503
+                        ],
+                        "y": [
+                            0,
+                            0.2
+                        ],
+                        "scale": 0.6000000000000002,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "shousha": {
+                        "x": [
+                            0,
+                            0.55
+                        ],
+                        "y": [
+                            0,
+                            0.3
+                        ],
+                        "scale": 0.4,
+                        "angle": 0
+                    }
+                }
+            }
         }
     },
     "maliang": {
@@ -17566,7 +17598,7 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0,
                             0.533
                         ],
-                        "scale": 0.6300000000000001,
+                        "scale": 0.8300000000000003,
                         "angle": 0
                     }
                 }
@@ -20017,6 +20049,40 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
                             0
                         ],
                         "scale": 0.67,
+                        "angle": 0
+                    }
+                }
+            }
+        }
+    },
+    "zhanghu": {
+        "击艮援懿.jpg": {
+            "player": {
+                "dynamic": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.35
+                        ],
+                        "y": [
+                            0,
+                            0.45
+                        ],
+                        "scale": 0.9,
+                        "angle": 0
+                    }
+                },
+                "beijing": {
+                    "decade": {
+                        "x": [
+                            0,
+                            0.5
+                        ],
+                        "y": [
+                            0,
+                            0.5
+                        ],
+                        "scale": 0.5400000000000001,
                         "angle": 0
                     }
                 }
