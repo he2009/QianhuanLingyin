@@ -1415,6 +1415,13 @@ window.qhly_import(function (lib, game, ui, get, ai, _status) {
 		        jsrgzhengyi: 'xinmingshi',
 		    },
 		},
+		dc_kongrong: {//孔融
+		    name: 'sp_kongrong',
+		    skills: {
+		        dckrmingshi: 'xinmingshi',
+		        lirang: 'xinlirang',
+		    },
+		},
 		jsrg_hejin: {//何进
 		    name: 're_hejin',
 		    skills: {
