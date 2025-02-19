@@ -372,26 +372,11 @@ export let CONTENT = function(config, pack) {
 						var avatars = player.doubleAvatar ? [character, character2] : [character];
 						var increased;
 						for (var i = 0; i < avatars.length; i++) {
-							// @ts-ignore
 							if (!play && EpicFX.hasHiddenSkill(avatars[i], player)) continue;
-							// if (get.mode() == 'guozhan' && lib.config['extension_千幻聆音_qhly_guozhanDS']) {
-							//     if (avatars[i] && avatars[i].indexOf('gz_') == 0) {
-							//         let extend = { [avatars[i]]: decadeUI.dynamicSkin[avatars[i].slice(3)] };
-							//         decadeUI.get.extend(decadeUI.dynamicSkin, extend);
-							//     }
-							// }
-							// if (lib.qhly_skinShare[avatars[i]] && lib.qhly_skinShare[avatars[i]].name) {
-							//     let extend = { [avatars[i]]: decadeUI.dynamicSkin[lib.qhly_skinShare[avatars[i]].name] };
-							//     decadeUI.get.extend(decadeUI.dynamicSkin, extend);
-							// }
 							skins = dskins[avatars[i]];
 							if (skins == undefined)
 								continue;
 							var keys = Object.keys(skins);
-							if (keys.length == 0) {
-								console.error('player.init: ' + avatars[i] + ' 没有设置动皮参数');
-								continue;
-							}
 							var skin;
 							var namex = i == 0 ? character : character2;
 							if (transform) skin = transform;
@@ -399,7 +384,6 @@ export let CONTENT = function(config, pack) {
 								.qhly_skinset.djtoggle && lib.config.extensions && lib.config.extensions
 								.includes('千幻聆音') && lib.config['extension_千幻聆音_enable']) {
 								skin = null;
-								// @ts-ignore
 								var value = game.qhly_getSkin(namex);
 								if (value) value = value.substring(0, value.lastIndexOf('.'));
 								else value = '经典形象';
@@ -1435,10 +1419,6 @@ export let CONTENT = function(config, pack) {
 					skins = dskins[avatars[i]];
 					if (skins == undefined) continue;
 					var keys = Object.keys(skins);
-					if (keys.length == 0) {
-						console.error('player.init: ' + avatars[i] + ' 没有设置动皮参数');
-						continue;
-					}
 					var skin, skinName;
 					// @ts-ignore
 					var realName = game.qhly_getRealName(avatars[i]);
@@ -2650,11 +2630,6 @@ export let CONTENT = function(config, pack) {
 					return;
 
 				var keys = Object.keys(skins);
-
-				if (keys.length == 0) {
-					console.error('player.init: ' + character + ' 没有设置动皮参数');
-					return;
-				}
 
 				var skin, cutdybg;
 				if (name) {
