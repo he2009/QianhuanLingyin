@@ -214,7 +214,7 @@ export let CONTENT = function(config, pack) {
 					'extension_千幻聆音_qhly_decadeCloseDynamic']) {
 				let cfm = confirm(
 					"千幻聆音：检测到十周年UI并未正常开启，无法正常使用千幻聆音中的十周年和手杀主题的动皮功能，点击【确定】将关闭所有动皮功能，点击【取消】将为您切换至默认主题并重启。"
-					);
+				);
 				if (cfm) {
 					game.saveConfig('extension_千幻聆音_qhly_decadeCloseDynamic', true);
 				} else {
@@ -237,7 +237,7 @@ export let CONTENT = function(config, pack) {
 						'extension_千幻聆音_qhly_decadeCloseDynamic']) {
 					if (confirm(
 							"千幻聆音：检测到您开启了千幻聆音设置中的“关闭所有动皮效果”，这将无法正常使用千幻聆音的动皮功能（并有可能造成其它错误），点击【确定】关闭该选项，点击【取消】将不再提醒。"
-							)) {
+						)) {
 						game.saveConfig('extension_千幻聆音_qhly_decadeCloseDynamic', false);
 					} else {
 						game.saveConfig('qhly_mentionDynamic2', true);
@@ -331,7 +331,7 @@ export let CONTENT = function(config, pack) {
 					// @ts-ignore
 					if (get.itemtype(player) == 'player') {
 						if (!player.isUnseen(0) && player.skinPack.zhuSkinType == "decade") bool1 =
-						true;
+							true;
 					} else bool1 = true;
 					if (bool1 && player.dynamic && player.dynamic.primary) {
 						skin = player.dynamic.primary;
@@ -491,8 +491,9 @@ export let CONTENT = function(config, pack) {
 								// @ts-ignore
 								if (skinCopy.dynamicBackground && lib.qhly_skinEdit[game
 										.qhly_getRealName(avatars[i])][editSkin].player[
-									editArgument2] && lib.qhly_skinEdit[game.qhly_getRealName(avatars[
-										i])][editSkin].player[editArgument2][theme]) {
+										editArgument2] && lib.qhly_skinEdit[game.qhly_getRealName(
+										avatars[
+											i])][editSkin].player[editArgument2][theme]) {
 									// @ts-ignore
 									var resetBackground = lib.qhly_skinEdit[game.qhly_getRealName(
 										avatars[i])][editSkin].player[editArgument2][theme];
@@ -583,7 +584,7 @@ export let CONTENT = function(config, pack) {
 									let temp = EpicFX.attackings[i];
 									if (temp.player == data.player) return game.playAudio(
 										`../extension/EpicFX/asset/audio/effect/${temp.name}.mp3`
-										);
+									);
 								}
 							}
 							game.playAudio(`../extension/EpicFX/asset/audio/effect/${data.name}.mp3`);
@@ -594,7 +595,7 @@ export let CONTENT = function(config, pack) {
 								name: data.name
 							})
 						} else game.playAudio(
-						`../extension/EpicFX/asset/audio/effect/${data.name}.mp3`);
+							`../extension/EpicFX/asset/audio/effect/${data.name}.mp3`);
 						if (player.dynamic.renderer.postMessage) player.dynamic.renderer.postMessage({
 							message: "HIDE",
 							id: player.dynamic.id,
@@ -971,7 +972,7 @@ export let CONTENT = function(config, pack) {
 							else if (!lib.config.qhly_mentionDynamic) {
 								if (confirm(
 										"千幻聆音：检测到有扩展修改武将登场动皮播放，这将与千幻聆音“十周年”或“手杀”样式冲突，点击【确定】为您切换为其他样式。若点击【取消】，将不再对此消息进行提示。"
-										)) {
+									)) {
 									lib.config.qhly_currentViewSkin = 'xuanwujianghu';
 									game.saveConfig('qhly_currentViewSkin', lib.config
 										.qhly_currentViewSkin);
@@ -1055,7 +1056,7 @@ export let CONTENT = function(config, pack) {
 								else if (!lib.config.qhly_mentionDynamic) {
 									if (confirm(
 											"千幻聆音：检测到有扩展修改武将登场动皮播放，这将与千幻聆音“十周年”或“手杀”样式冲突，点击【确定】为您切换为其他样式。若点击【取消】，将不再对此消息进行提示。"
-											)) {
+										)) {
 										lib.config.qhly_currentViewSkin = 'xuanwujianghu';
 										game.saveConfig('qhly_currentViewSkin', lib.config
 											.qhly_currentViewSkin);
@@ -1408,14 +1409,15 @@ export let CONTENT = function(config, pack) {
 				var increased;
 				for (var i = 0; i < avatars.length; i++) {
 					let hide = [];
-					if (lib.character[avatars[i]] && lib.character[avatars[i]][4]) hide = lib.character[avatars[i]][
-						4
-					];
-					let isHide;
-					if (hide.length > 0 && hide[0] == "hiddenSkill" || get.mode() == 'guozhan') {
-						isHide = true;
+					if (lib.character[avatars[i]] && lib.character[avatars[i]][4]) {
+						hide = lib.character[avatars[i]][4];
 					}
+
+					// 检查是否隐藏
+					let isHide = hide.length > 0 && hide[0] == "hiddenSkill" || get.mode() == 'guozhan';
 					if (isHide) continue;
+
+					// 获取皮肤数据
 					skins = dskins[avatars[i]];
 					if (skins == undefined) continue;
 					var keys = Object.keys(skins);
@@ -1501,21 +1503,26 @@ export let CONTENT = function(config, pack) {
 								'extension/皮肤切换/images/card/card.png")'
 						}
 					}
-					// 修改3 end
+					// 更新动态计数
 					if (!increased) {
 						increased = true;
-						// @ts-ignore
 						decadeUI.CUR_DYNAMIC++;
 					}
 
-					var forces = 'qun';
-					if (lib.character[character]) forces = lib.character[character][1];
+					// 更新势力信息
+					var forces = lib.character[character] ? lib.character[character][1] : 'qun';
 					if (!isHide) {
-						// @ts-ignore
 						game.qhly_checkYH(this, forces);
 					}
 
+					// 更新返回状态
+					res2.status = true;
+					if (i == 0 && skinCopy.decade) res2.zhu = "decade";
+					else if (skinCopy.decade) res2.fu = "decade";
+
 				}
+				// 返回结果
+				return res2;
 				// @ts-ignore
 				if (game.qhly_hasExtension('皮肤切换') && window.skinSwitch && lib.config[window.skinSwitch.configKey
 						.useDynamic]) {
@@ -2384,13 +2391,13 @@ export let CONTENT = function(config, pack) {
 					if (!_status.qhly_replaceSkin) _status.qhly_replaceSkin = {};
 					// @ts-ignore
 					if (!_status.qhly_replaceSkin[playerName]) _status.qhly_replaceSkin[
-					playerName] = {};
+						playerName] = {};
 					// @ts-ignore
 					_status.qhly_replaceSkin[playerName][skin] = player._qhly_skinChange[i];
 					// @ts-ignore
 					if (window.decadeUI && !game.qhly_hasExtension('皮肤切换') && !game.qhly_hasExtension(
 							'EpicFX')) game.qhly_changeDynamicSkin(player, undefined, undefined, i ==
-					1);
+						1);
 				}, undefined);
 			}
 		}
@@ -2491,7 +2498,7 @@ export let CONTENT = function(config, pack) {
 	game.qhly_getDengJie = function(name) { //十周年样式中通过game.getRarity获取css中的属性等阶
 		var playerDengjie = 'one';
 		if (!lib.config['extension_千幻聆音_qhly_decadeDengjie'] || lib.config[
-			'extension_千幻聆音_qhly_decadeDengjie'] == 'auto') {
+				'extension_千幻聆音_qhly_decadeDengjie'] == 'auto') {
 			switch (game.getRarity(name)) {
 				case 'common':
 					playerDengjie = 'two';
@@ -2550,7 +2557,7 @@ export let CONTENT = function(config, pack) {
 			var skinkey = skin.substring(0, skin.lastIndexOf('.'));
 			// @ts-ignore
 			if (window.decadeUI && decadeUI.dynamicSkin[name] && decadeUI.dynamicSkin[name][skinkey])
-			return 'dongtai';
+				return 'dongtai';
 			return dongtai ? 'dongtai' : 'yuanhua';
 		}
 		switch (lib.config.qhly_level[name + '_' + skin]) {
@@ -2578,7 +2585,7 @@ export let CONTENT = function(config, pack) {
 	}
 	// @ts-ignore
 	game.qhly_changeDynamicSkin = function(str, name, character, character2,
-	play) { //str主体，如果为字符串是名称中带有str的所有玩家，name指定更换为某种动皮，character玩家姓名id，character2是否为副将
+		play) { //str主体，如果为字符串是名称中带有str的所有玩家，name指定更换为某种动皮，character玩家姓名id，character2是否为副将
 		// @ts-ignore
 		if (!window.decadeUI) return;
 		if (lib.config['extension_千幻聆音_qhly_decadeCloseDynamic']) return;
@@ -2745,7 +2752,7 @@ export let CONTENT = function(config, pack) {
 					.qhly_skinEdit[game.qhly_getRealName(character)][editSkin][nodeType] && lib.qhly_skinEdit[
 						game.qhly_getRealName(character)][editSkin][nodeType][editArgument1] && lib
 					.qhly_skinEdit[game.qhly_getRealName(character)][editSkin][nodeType][editArgument1][theme]
-					) {
+				) {
 					// @ts-ignore
 					var resetDynamic = lib.qhly_skinEdit[game.qhly_getRealName(character)][editSkin][nodeType][
 						editArgument1
@@ -4244,7 +4251,7 @@ export let CONTENT = function(config, pack) {
 		const excludeName = ['xiahouyuan', 'guanyu', 'sunjian', 'simashi', 'lvbu'];
 		if (state.mainView.skinTypeGuozhan) { //显示国战血量
 			if (get.mode() != 'guozhan' && excludeName.includes(slimName) && state.name != 're_lvbu')
-			HP++; //非国战模式下除界吕布以外角色显示普通模式血量+1
+				HP++; //非国战模式下除界吕布以外角色显示普通模式血量+1
 			HP = HP *= 0.5;
 			if (HP <= 5) {
 				for (var i = 0; i < Math.floor(HP); i++) {
@@ -5124,7 +5131,7 @@ export let CONTENT = function(config, pack) {
 	game.qhly_getCurrentMusic = function() {
 		var ret = null;
 		if (lib.config['qhly_modemusicconfig_' + get.mode()] && lib.config['qhly_modemusicconfig_' + get
-		.mode()] != 'system') {
+				.mode()] != 'system') {
 			ret = lib.config['qhly_modemusicconfig_' + get.mode()];
 		}
 		if (lib.config.qhly_enableCharacterMusic) {
@@ -5536,7 +5543,7 @@ export let CONTENT = function(config, pack) {
 						}
 						// @ts-ignore
 						if (game.qhly_hasExtension('皮肤切换')) skinSwitch.postMsgApi.debug(focus,
-						editMode);
+							editMode);
 						// @ts-ignore
 						if (game.qhly_hasExtension('EpicFX') && lib.config[
 								'extension_EpicFX_skinEffects']) {
@@ -5585,7 +5592,7 @@ export let CONTENT = function(config, pack) {
 						}
 						// @ts-ignore
 						if (game.qhly_hasExtension('皮肤切换')) skinSwitch.postMsgApi.debug(focus,
-						editMode);
+							editMode);
 						break;
 					}
 					case 'qhly_bigedit6': {
@@ -5597,7 +5604,8 @@ export let CONTENT = function(config, pack) {
 							if (!lib.qhly_skinEdit[name][skin]) lib.qhly_skinEdit[name][skin] = {};
 							// @ts-ignore
 							if (!lib.qhly_skinEdit[name][skin][editObject]) lib.qhly_skinEdit[name][
-								skin][editObject] = {};
+								skin
+							][editObject] = {};
 							// @ts-ignore
 							if (!lib.qhly_skinEdit[name][skin][editObject][editArgument1]) lib
 								.qhly_skinEdit[name][skin][editObject][editArgument1] = {};
@@ -5625,7 +5633,8 @@ export let CONTENT = function(config, pack) {
 								// @ts-ignore
 								if (!lib.qhly_skinEdit[name][skin][editObject][editArgument2][theme])
 									lib.qhly_skinEdit[name][skin][editObject][editArgument2][
-									theme] = {};
+										theme
+									] = {};
 								// @ts-ignore
 								lib.qhly_skinEdit[name][skin][editObject][editArgument2][theme].x = temp
 									.beijing.x;
@@ -5757,7 +5766,8 @@ export let CONTENT = function(config, pack) {
 							if (!lib.qhly_skinEdit[name][skin]) lib.qhly_skinEdit[name][skin] = {};
 							// @ts-ignore
 							if (!lib.qhly_skinEdit[name][skin][editObject]) lib.qhly_skinEdit[name][
-								skin][editObject] = {};
+								skin
+							][editObject] = {};
 							// @ts-ignore
 							if (!lib.qhly_skinEdit[name][skin][editObject].dynamic) lib.qhly_skinEdit[
 								name][skin][editObject].dynamic = {};
@@ -6249,8 +6259,7 @@ export let CONTENT = function(config, pack) {
 	// @ts-ignore
 	game.qhly_playAudioPlus = function(...args) {
 		const options = (args.length === 1 && get.objtype(args[0]) === "object") ?
-			args[0] :
-			{
+			args[0] : {
 				path: args.filter(arg => typeof arg === 'string' || typeof arg === 'number').join("/"),
 				onError: args.find(arg => typeof arg === "function"),
 			};
@@ -6344,8 +6353,7 @@ export let CONTENT = function(config, pack) {
 			return game.qhly_originPlayAudio.apply(this, arguments);
 		}
 		const options = (args.length === 1 && get.objtype(args[0]) === "object") ?
-			args[0] :
-			{
+			args[0] : {
 				path: args.filter(arg => typeof arg === 'string' || typeof arg === 'number').join("/"),
 				onError: args.find(arg => typeof arg === "function"),
 			};
@@ -6432,7 +6440,7 @@ export let CONTENT = function(config, pack) {
 			} else {
 				// @ts-ignore
 				game.qhly_playAudioRepeatable('..', 'extension', '千幻聆音', 'audio', name + Math.ceil(Math
-				.random() * num));
+					.random() * num));
 			}
 		}
 	};
@@ -6822,7 +6830,7 @@ export let CONTENT = function(config, pack) {
 		if (name.indexOf('gz_') == 0) {
 			// @ts-ignore
 			if (lib.config.qhly_guozhan === false || get.mode() != 'guozhan' || !game.qhly_hasGuozhanSkin(
-				name)) {
+					name)) {
 				var subname = name.slice(3);
 				if (get.character(subname)) {
 					name = subname;
@@ -6884,7 +6892,7 @@ export let CONTENT = function(config, pack) {
 		if (name.indexOf('gz_') == 0) {
 			// @ts-ignore
 			if (lib.config.qhly_guozhan === false || get.mode() != 'guozhan' || !game.qhly_hasGuozhanSkin(
-				name)) {
+					name)) {
 				var subname = name.slice(3);
 				if (get.character(subname)) {
 					name = subname;
@@ -7075,7 +7083,7 @@ export let CONTENT = function(config, pack) {
 									if (typeof sinfo.audio == 'number') {
 										return '';
 									} else if (typeof sinfo.audio == 'string' && sinfo.audio.indexOf(
-										'ext:') == 0) {
+											'ext:') == 0) {
 										var infos = sinfo.audio.split(':');
 										if (infos.length >= 2) {
 											extName = infos[1];
@@ -7093,7 +7101,7 @@ export let CONTENT = function(config, pack) {
 				},
 				audio: ((lib.config.qhly_extSkinPath == undefined || lib.config.qhly_extSkinPath == 'default') ?
 					'extension/' + extNameInPic + '/skin/audio/' : 'extension/千幻聆音/sanguoaudio/'
-					), //皮肤配音文件在千幻聆音扩展内的位置。
+				), //皮肤配音文件在千幻聆音扩展内的位置。
 			};
 		}
 		return null;
@@ -7191,7 +7199,7 @@ export let CONTENT = function(config, pack) {
 		if (name.indexOf('gz_') == 0) {
 			// @ts-ignore
 			if (lib.config.qhly_guozhan === false || get.mode() != 'guozhan' || !game.qhly_hasGuozhanSkin(
-				name)) {
+					name)) {
 				var subname = name.slice(3);
 				if (get.character(subname)) {
 					name = subname;
@@ -7822,7 +7830,7 @@ export let CONTENT = function(config, pack) {
 		if (name.indexOf('gz_') == 0) { //国战兼容
 			// @ts-ignore
 			if (lib.config.qhly_guozhan === false || get.mode() != 'guozhan' || !game.qhly_hasGuozhanSkin(
-				name)) {
+					name)) {
 				const subname = name.slice(3);
 				if (get.character(subname)) {
 					name = subname;
@@ -7874,7 +7882,7 @@ export let CONTENT = function(config, pack) {
 										delete lib.config.qhly_skinset.audioReplace["../" +
 											extAudioPath + m.slice(6)];
 									} else delete lib.config.qhly_skinset.audioReplace[
-									m]; //删除原有的音频映射。
+										m]; //删除原有的音频映射。
 								}
 							}
 							if (skinPackage2.isExt) {
@@ -7937,7 +7945,7 @@ export let CONTENT = function(config, pack) {
 														// @ts-ignore
 														file2 = game.qhly_getSkillAudioName(lib
 															.qhly_skinShare[name].skills[
-															i], {
+																i], {
 																name: realName
 															});
 
@@ -10187,7 +10195,7 @@ export let CONTENT = function(config, pack) {
 								}
 								if (lib.config.qhly_noSkin == 'origin') skinView2
 									.qhly_origin_setBackgroundImage(prefix + namex +
-									'.jpg'); //原画
+										'.jpg'); //原画
 								else skinView2.qhly_origin_setBackgroundImage(
 									'extension/千幻聆音/image/noSkin.png'); //noskin
 							}
@@ -10331,7 +10339,7 @@ export let CONTENT = function(config, pack) {
 						});
 						// @ts-ignore
 						skinView.dynamicToggle = ui.create.div('.qh-skinchange-dynamicChange',
-						skinView);
+							skinView);
 						// @ts-ignore
 						if (skin && bothSkin.includes(skin.substring(0, skin.lastIndexOf('.'))))
 							skinView.dynamicToggle.setAttribute('toggle', true);
@@ -10416,7 +10424,7 @@ export let CONTENT = function(config, pack) {
 						var skinQua = ui.create.div('.qhly-skinQua-decade', skinView);
 						// @ts-ignore
 						var skininfo = game.qhly_getSkinInfo(namey, skin, game.qhly_foundPackage(
-						namey));
+							namey));
 						var level = skininfo.level;
 						var style = skininfo.levelStyle;
 						if (style) {
@@ -10493,7 +10501,7 @@ export let CONTENT = function(config, pack) {
 							// @ts-ignore
 							skinView.defaultskin.setAttribute('data-sel', true);
 							if (skinView.offsetLeft > 600) viewState2.offset = 614 - skinView
-							.offsetLeft;
+								.offsetLeft;
 						} else {
 							//skinView.style.filter = "grayscale(100%)";
 							//skinView.belowText.style.textShadow = '.2rem 0rem .5rem blue,-.2rem 0rem .5rem blue,0rem .2rem .5rem blue,0rem -.2rem .5rem blue';
@@ -10516,7 +10524,7 @@ export let CONTENT = function(config, pack) {
 									//}
 									if (lib.config[
 											'extension_千幻聆音_qhly_decadeChangeEffect'
-											] && cPlayer) cPlayer
+										] && cPlayer) cPlayer
 										.playChangeSkinEffect(true);
 									// @ts-ignore
 									game.qhlySyncConfig();
@@ -10543,7 +10551,7 @@ export let CONTENT = function(config, pack) {
 									}
 									if (lib.config.qhly_noSkin == 'origin') skinView2
 										.qhly_origin_setBackgroundImage(prefix + namey +
-										'.jpg'); //原画
+											'.jpg'); //原画
 									else skinView2.qhly_origin_setBackgroundImage(
 										'extension/千幻聆音/image/noSkin.png'); //noskin
 								}
@@ -11438,7 +11446,7 @@ export let CONTENT = function(config, pack) {
 								}
 								if (lib.config.qhly_noSkin == 'origin') skinView2
 									.qhly_origin_setBackgroundImage(prefix + namex +
-									'.jpg'); //原画
+										'.jpg'); //原画
 								else skinView2.qhly_origin_setBackgroundImage(
 									'extension/千幻聆音/image/noSkin.png'); //noskin
 							}
@@ -11646,7 +11654,7 @@ export let CONTENT = function(config, pack) {
 						var skinQua = ui.create.div('.qhly-skinQua-shousha', skinView);
 						// @ts-ignore
 						var skininfo = game.qhly_getSkinInfo(namey, skin, game.qhly_foundPackage(
-						namey));
+							namey));
 						var level = skininfo.level;
 						var style = skininfo.levelStyle;
 						if (style) {
@@ -11743,7 +11751,7 @@ export let CONTENT = function(config, pack) {
 									//}
 									if (lib.config[
 											'extension_千幻聆音_qhly_decadeChangeEffect'
-											] && cPlayer) cPlayer
+										] && cPlayer) cPlayer
 										.playChangeSkinEffect(true);
 									// @ts-ignore
 									game.qhlySyncConfig();
@@ -11769,7 +11777,7 @@ export let CONTENT = function(config, pack) {
 									}
 									if (lib.config.qhly_noSkin == 'origin') skinView2
 										.qhly_origin_setBackgroundImage(prefix + namey +
-										'.jpg'); //原画
+											'.jpg'); //原画
 									else skinView2.qhly_origin_setBackgroundImage(
 										'extension/千幻聆音/image/noSkin.png'); //noskin
 								}
@@ -12098,7 +12106,7 @@ export let CONTENT = function(config, pack) {
 		var background = ui.create.div('.qh-window', gback);
 		var backButton = ui.create.div('.qh-back', background);
 		if (lib.config.qhly_currentViewSkin == 'shousha') var dibuhuo = ui.create.div('.qh-dibuhuo',
-		background);
+			background);
 		var setSize = function() {
 			var screenWidth = ui.window.offsetWidth;
 			var screenHeight = ui.window.offsetHeight;
@@ -12307,7 +12315,7 @@ export let CONTENT = function(config, pack) {
 		if (name.indexOf('gz_') == 0) {
 			// @ts-ignore
 			if (lib.config.qhly_guozhan === false || get.mode() != 'guozhan' || !game.qhly_hasGuozhanAudio(
-				name)) {
+					name)) {
 				var subname = name.slice(3);
 				if (get.character(subname)) {
 					name = subname;
@@ -12371,7 +12379,7 @@ export let CONTENT = function(config, pack) {
 		if (name.indexOf('gz_') == 0) {
 			// @ts-ignore
 			if (lib.config.qhly_guozhan === false || get.mode() != 'guozhan' || !game.qhly_hasGuozhanAudio(
-				name)) {
+					name)) {
 				var subname = name.slice(3);
 				if (get.character(subname)) {
 					name = subname;
@@ -12890,7 +12898,7 @@ export let CONTENT = function(config, pack) {
 				// @ts-ignore
 				if (state.mainView.avatarImage.stopDynamic) state.mainView.avatarImage.stopDynamic();
 				if (!lib.config.qhly_skinset.djtoggle[name]) lib.config.qhly_skinset.djtoggle[
-				name] = {};
+					name] = {};
 				lib.config.qhly_skinset.djtoggle[name][skinStr] = true;
 			}
 			// @ts-ignore
@@ -13604,7 +13612,7 @@ export let CONTENT = function(config, pack) {
 							skinView.defaultskin.listen(function() {
 								if (this.getAttribute('data-sel') === 'true') return;
 								that.onClickSkin(parseInt(this.id.slice(12)), name, state,
-								this);
+									this);
 							});
 							// @ts-ignore
 							skinView.$dynamicWrap = ui.create.div('.qhdynamic-big-wrap', skinView);
@@ -13677,7 +13685,7 @@ export let CONTENT = function(config, pack) {
 									// @ts-ignore
 									if (_status['qhly_primarySkin_' + name] && _status[
 											'qhly_primarySkin_' + name] == game.qhly_getSkin(
-										name)) {
+											name)) {
 										// @ts-ignore
 										game.qhly_changeDynamicSkin(name);
 									}
@@ -14212,7 +14220,7 @@ export let CONTENT = function(config, pack) {
 								}
 								var changeSex = document.getElementById('qhconfig_checkbox_changeSex');
 								if (!lib.config.qhly_changeSex[name]) lib.config.qhly_changeSex[
-								name] = {};
+									name] = {};
 								if (changeSex) {
 									// @ts-ignore
 									ui.qhly_initCheckBox(changeSex, lib.config.qhly_changeSex[name][game
@@ -14240,7 +14248,7 @@ export let CONTENT = function(config, pack) {
 												name)] = true;
 										}
 										game.saveConfig('qhly_changeSex', lib.config
-										.qhly_changeSex);
+											.qhly_changeSex);
 									};
 								}
 							}
@@ -14721,7 +14729,7 @@ export let CONTENT = function(config, pack) {
 								if (mode == 'connect') continue;
 								if (that['banned_checkbox_mode_' + mode]) {
 									that['banned_checkbox_mode_' + mode].qhly_setChecked(true,
-									true);
+										true);
 								}
 							}
 						} else {
@@ -16139,7 +16147,7 @@ export let CONTENT = function(config, pack) {
 									if (currentSkin == this.getSkinAt(i).skinId) {
 										currentSkinView.qhBoard.setBackgroundImage(
 											'extension/千幻聆音/theme/shuimo/newui_skin_background_shuimo.png'
-											);
+										);
 										currentSkinView.qhBoard.style.zIndex = 33;
 										currentSkinView.qhBoard.style.filter = "saturate(100%)";
 										currentSkinView.qhTitle.show();
@@ -16941,7 +16949,7 @@ export let CONTENT = function(config, pack) {
 								if (mode == 'connect') continue;
 								if (that['banned_checkbox_mode_' + mode]) {
 									that['banned_checkbox_mode_' + mode].qhly_setChecked(true,
-									true);
+										true);
 								}
 							}
 						} else {
@@ -17432,7 +17440,7 @@ export let CONTENT = function(config, pack) {
 			state.onChangeSkin();
 			var group = state.intro[1];
 			if (get.is.double(state.name) && (currentViewSkin.isQiLayout || currentViewSkin
-				.isLolBigLayout)) {
+					.isLolBigLayout)) {
 				subView.group.hide();
 				subView.doublegroup.show();
 				// @ts-ignore
@@ -17640,7 +17648,7 @@ export let CONTENT = function(config, pack) {
 										if (currentViewSkin.isQiLayout) {
 											img.setBackgroundImage(
 												'extension/千幻聆音/theme/shuimo/newui_shuimo_hpimg_gray.jpg'
-												);
+											);
 										} else if (currentViewSkin.isLolBigLayout) {
 											img.setBackgroundImage(
 												'extension/千幻聆音/theme/lolbig/newui_lol_hpimg_gray.png');
@@ -17753,7 +17761,7 @@ export let CONTENT = function(config, pack) {
 		if (name.indexOf('gz_') == 0) {
 			// @ts-ignore
 			if (lib.config.qhly_guozhan === false || get.mode() != 'guozhan' || !game.qhly_hasGuozhanSkin(
-				name)) {
+					name)) {
 				name = name.slice(3);
 			}
 		}
@@ -18049,7 +18057,7 @@ export let CONTENT = function(config, pack) {
 					if (!lib.config.qhly_mentionConflitCC) {
 						var ret = confirm(
 							"你安装的扩展中，有扩展试图修改ui.click.charactercard，此行为与《千幻聆音》冲突，你可以关闭有冲突的功能。若你点击【取消】，将不再对此消息进行提示。"
-							);
+						);
 						if (!ret) {
 							game.saveConfig('qhly_mentionConflitCC', true);
 						}
@@ -18155,7 +18163,7 @@ export let CONTENT = function(config, pack) {
 												'extension_千幻聆音_qhly_decadeChangeEffect'] &&
 											(lib.config.qhly_currentViewSkin == 'decade' ||
 												lib.config.qhly_currentViewSkin == 'shousha'
-												)) player.playChangeSkinEffect(player
+											)) player.playChangeSkinEffect(player
 											.name2 && player.name2 == n);
 									}, true);
 								// @ts-ignore
@@ -18321,7 +18329,7 @@ export let CONTENT = function(config, pack) {
 						if (list && list.length)
 							// @ts-ignore
 							game.qhly_setCurrentSkin(player.name, list.randomGet(), undefined,
-							true);
+								true);
 					}
 				}, false);
 			}
