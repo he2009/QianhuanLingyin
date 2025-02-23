@@ -1409,18 +1409,21 @@ export let CONTENT = function(config, pack) {
 				var increased;
 				for (var i = 0; i < avatars.length; i++) {
 					let hide = [];
-					if (lib.character[avatars[i]] && lib.character[avatars[i]][4]) {
-						hide = lib.character[avatars[i]][4];
+					if (lib.character[avatars[i]] && lib.character[avatars[i]][4]) hide = lib.character[avatars[i]][
+						4
+					];
+					let isHide;
+					if (hide.length > 0 && hide[0] == "hiddenSkill" || get.mode() == 'guozhan') {
+						isHide = true;
 					}
-
-					// 检查是否隐藏
-					let isHide = hide.length > 0 && hide[0] == "hiddenSkill" || get.mode() == 'guozhan';
 					if (isHide) continue;
-
-					// 获取皮肤数据
 					skins = dskins[avatars[i]];
 					if (skins == undefined) continue;
 					var keys = Object.keys(skins);
+					if (keys.length == 0) {
+						console.error('player.init: ' + avatars[i] + ' 没有设置动皮参数');
+						continue;
+					}
 					var skin, skinName;
 					// @ts-ignore
 					var realName = game.qhly_getRealName(avatars[i]);
@@ -1464,7 +1467,7 @@ export let CONTENT = function(config, pack) {
 								.selectSkinData.value = keys[i];
 						}
 					}
-					var theme = ui.arena.dataset.newDecadeStyle == 'on' ? 'decade' : 'decade';
+					var theme = ui.arena.dataset.newDecadeStyle == 'on' ? 'decade' : 'shousha';
 					// @ts-ignore
 					if (lib.config['extension_千幻聆音_qhly_editDynamic'] && lib.qhly_skinEdit[realName] && lib
 						.qhly_skinEdit[realName][skinName] && lib.qhly_skinEdit[realName][skinName].player && lib
@@ -1503,26 +1506,21 @@ export let CONTENT = function(config, pack) {
 								'extension/皮肤切换/images/card/card.png")'
 						}
 					}
-					// 更新动态计数
+					// 修改3 end
 					if (!increased) {
 						increased = true;
+						// @ts-ignore
 						decadeUI.CUR_DYNAMIC++;
 					}
 
-					// 更新势力信息
-					var forces = lib.character[character] ? lib.character[character][1] : 'qun';
+					var forces = 'qun';
+					if (lib.character[character]) forces = lib.character[character][1];
 					if (!isHide) {
+						// @ts-ignore
 						game.qhly_checkYH(this, forces);
 					}
 
-					// 更新返回状态
-					res2.status = true;
-					if (i == 0 && skinCopy.decade) res2.zhu = "decade";
-					else if (skinCopy.decade) res2.fu = "decade";
-
 				}
-				// 返回结果
-				return res2;
 				// @ts-ignore
 				if (game.qhly_hasExtension('皮肤切换') && window.skinSwitch && lib.config[window.skinSwitch.configKey
 						.useDynamic]) {
