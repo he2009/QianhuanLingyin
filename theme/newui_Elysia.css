@@ -1,0 +1,1540 @@
+
+@font-face {
+    font-family: 'heiti';
+    src: local('黑体'), url('../font/heiti.woff2');
+}
+.qh-background {
+  --w: 100%;
+  z-index: 13;
+  position: absolute;
+  background-size: 100% 100%;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 100%;
+  height: 140%;
+  /* min-height: 100%; */
+  transform: translate(-50%, -50%);
+  background-image: url('Elysia/bg_lobby.jpg');
+  font-family: 'heiti';
+  text-shadow: none;
+  
+}
+.qh-window {
+  position: absolute;
+  height:100%;
+  width:100%;
+  left: 50%;
+  top: 50%;
+  display: block;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%);
+  /* background-image: url('newui_background.png'); */
+  z-index: 30;
+}
+.qh-window>.qh-back {/*返回按钮*/
+  --w: 10%;
+  z-index: 3;
+  position:absolute;
+  display: flex;
+  left:1%;
+  top: 0;
+  width: 4.2%;
+  height: 6%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url('Elysia/exitbutton.png');
+  opacity: 0;
+}
+.qh-window>.qh-back-border{
+  z-index: 1;
+  position:absolute;
+  display: flex;
+  left:0;
+  top:0;
+  width:25%;
+  height: 10.6%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url('Elysia/back-border.png');
+}
+
+.qh-shoushabg {/*技能大图选项框上*/
+  z-index: 3;
+  top: 8%;
+  right: 13%;
+  width: 38%;
+  height: 55%;
+  background-image: url('Elysia/chr_detail_des_bghead.png');
+  background-size: 100% 2.7em;
+  background-repeat: no-repeat;
+  position: absolute;
+ 
+}
+
+.qh-shoushabgbody {/*大图选项框中*/
+  top: calc(8%);
+  right: 13.25%;
+  width: 37.77%;
+  height: 88%;
+  margin-bottom: -0.1%;
+  background-image: url('Elysia/chr_detail_des_bgbody.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  
+}
+
+.qh-window>.qh-shousha-big-avatar {/*角色框体大图*/
+  z-index: 63;
+  position: absolute;
+  left: calc(16%);
+  top: calc(6.5%);
+  width: 28%;
+  height: 93%;
+  display: block;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  /*background-image: url('../image/newui_avatar.png');*/
+   transition:all 0.3s;
+}
+.qhcamp-big-wrap.shousha>.qhcamp-name {
+width: 98%;
+height: 93%;
+}
+.qh-shousha-big-avatar>.qh-image-standard {/*角色大图*/
+  --p: 50%;
+  z-index: 60;
+  display: flex;
+  bottom: calc(3.4%);
+  left: calc(1%);
+  width:calc(99%);
+  height: calc(93%);
+  background-size: cover;
+  background-position: var(--p);
+  background-color: #b39a86;
+  background-repeat: no-repeat;
+  border: 4px solid;
+  border-radius: 4px;
+  border-image: linear-gradient(50deg, #fff,#f6bf9f,#ff8ab1,#db8ade,#a983fc) 1;
+  transition:none;
+}
+.qhly_blackbg>.qh-image-standard {/*动皮大图调整框*/
+  --p: 50%;
+  --w: 1vw;
+  z-index: 1;
+  position: absolute;
+  bottom: calc(50% - var(--w) * 19.2);
+  left: calc(17.5%);
+  width: calc(var(--w) * 26.05);
+  height: calc(var(--w) * 38.6);
+  background-size: cover;
+  background-position: var(--p);
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  transition: none;
+}
+
+.qh-shousha-big-avatar>.qh-image-lutou {
+  z-index: 60;
+  display: flex;
+  bottom: calc(3.4%);
+  left: calc(1%);
+  width:calc(99%);
+  height: calc(95%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  transition:none;
+}
+
+.qh-shousha-big-avatar.shousha>.qh-image-lutou {
+  z-index: 60;
+  display: flex;
+  bottom: calc(3.4%);
+  left: calc(1%);
+  width:calc(99%);
+  height: calc(95%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  transition:none;
+}
+
+
+.qhly_blackbg>.qh-image-lutou {
+  --p: 50%;
+  --w: 1vw;
+  z-index: 1;
+  position: absolute;
+  bottom: calc(50% - var(--w) * 19.2);
+  left: calc(17.5%);
+  width: calc(var(--w) * 26.05);
+  height: calc(var(--w) * 41);
+  background-size: cover;
+  background-position: var(--p);
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  transition: none;
+}
+
+.qh-shousha-big-avatar>.qh-shousha-skintype {/*身份标志*/
+  display: block;
+  flex-direction: column;
+  height: 26%;
+  width: 19%;
+  top: 13%;
+  right: -2%;
+  position: absolute;
+  z-index: 64;
+  transition: none;
+  opacity: 0;
+}
+
+.qh-shousha-skintype>.qh-shousha-skintype0 {
+  margin: -3% 10% -3% auto;
+  width: 63%;
+  height: 33%;
+  position: relative;
+  background-image: url('Elysia/chr_detail_mode_biaozhun.png');
+  background-size: 100% 100%;
+  transition: none;
+}
+
+.qh-shousha-skintype>.qh-shousha-skintype0.sel {
+  margin: -3% 0 -3% auto;
+  width: 100%;
+  height: 40%;
+  background-image: url('Elysia/chr_detail_mode_biaozhunsel.png');
+}
+
+.qh-shousha-skintype>.qh-shousha-skintype1 {
+  margin: -3% 10% -3% auto;
+  width: 63%;
+  height: 33%;
+  position: relative;
+  background-image: url('Elysia/chr_detail_mode_guozhan.png');
+  background-size: 100% 100%;
+  transition: none;
+}
+
+.qh-shousha-skintype>.qh-shousha-skintype1.sel {
+  margin: -3% 0 -3% auto;
+  width: 100%;
+  height: 40%;
+  background-image: url('Elysia/chr_detail_mode_guozhansel.png');
+}
+
+.qh-shousha-skintype>.qh-shousha-skintype2 {
+  margin: -3% 10% -3% auto;
+  width: 63%;
+  height: 33%;
+  position: relative;
+  background-image: url('Elysia/chr_detail_mode_jingji.png');
+  background-size: 100% 100%;
+  transition: none;
+}
+
+.qh-shousha-skintype>.qh-shousha-skintype2.sel {
+  margin: -3% 0 -3% auto;
+  width: 100%;
+  height: 40%;
+  background-image: url('Elysia/chr_detail_mode_jingjisel.png');
+}
+
+/*.qh-shousha-big-avatar>.qh-avatar-label {
+  --u: url('Elysia/detail_cong.png');
+  pointer-events: none;
+  z-index: 1;
+  position: absolute;
+  display: block;
+  width: calc(110%);
+  height: calc(103%);
+  left: calc(-9%);
+  top: calc(0%);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: var(--u);
+}*/
+
+.qh-shousha-big-avatar>.qh-avatar-label-title {
+  z-index: 61;
+  position: absolute;
+  top: calc(16%);
+  left: calc(9%);
+  width: calc(20%);
+  height: calc(50%);
+  color: #B5AB82;
+  font-size: 16px;
+  display: block;
+  font-weight: bold;
+  filter: drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black) drop-shadow(0 1px 0 black) drop-shadow(0 -1px 0 black);
+}
+
+.qh-shousha-big-avatar>.qh-avatar-label-other {/*从武将框*/
+  pointer-events: none;
+  --u: url('Elysia/detail_cong.png');
+  z-index: 63;
+  position: absolute;
+  display: block;
+  width: calc(110%);
+  height: calc(103%);
+  left: calc(-3.7%);
+  top: calc(-2%);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: var(--u);
+}
+
+.qh-shousha-big-avatar>.qh-avatar-rank {/*武将大图等阶*/
+  z-index: 64;
+  top: 72%;
+  left: 38%;
+  width:24%;
+  height: 15.6%;
+  background-size: 100% 100%;
+  transition: none;
+  pointer-events: none;
+}
+
+.qh-shousha-big-avatar>.qh-skin-rank {/*武将大图皮肤品质*/
+  z-index: 64;
+  top: 3%;
+  right:1%;
+  width: 32%;
+  height: 12.6%;
+  background-size: 100% 100%;
+  transition: none;
+  pointer-events: none;
+}
+
+ .qh-avatar-label>.qh-avatar-label-rank {
+    z-index: 35;
+    position: absolute;
+    top: calc(10%);
+    left: calc(260%);
+    width: calc(88.94%);
+    height: calc(22.49%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+} 
+
+.qh-avatar-dragontailcur {/*进阶框数值*/
+  z-index: 4;
+  left: 88%;
+  top: 59.4%;
+  width: 30.5%;
+  height: 8%;
+  background-size: 100% 100%;
+  background-image: url('Elysia/chr_prg_cur.png');
+  display: none;/*已隐藏*/
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  line-height: 0%;
+  font-size: 1.2em;
+  transition: none;
+}
+.qh-avatar-dragontailtotal {/*进阶框数字*/
+  z-index: 3;
+  left: 88%;
+  top: -1.2%;
+  width: 30.5%;
+  height: 8%;
+  background-size: 100% 100%;
+  background-image: url('Elysia/chr_prg_total.png');
+  display: none;/*已隐藏*/
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  line-height: 0%;
+  font-size: 1.2em;
+}
+
+.qh-avatar-shoushabuttons {
+  z-index: -1;
+  left: 9%;
+  bottom: 6%;
+  width: 6%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  transition: none;
+}
+
+.qh-avatar-shoushabuttons>div:active {
+  filter: contrast(0.4) brightness(2);
+}
+
+.qh-avatar-default {
+  position: static;
+  width: 5em;
+  height: 5em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('Elysia/shewei2.png');
+  transition: none;
+}
+.qh-avatar-default2{
+  position: absolute;
+  bottom:0;
+  width: 5em;
+  height: 5em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('Elysia/dangqian2.png');
+  transition: none;
+}
+.qh-avatar-taici {
+  position: static;
+  width: 5em;
+  height: 5em;
+  bottom:5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('Elysia/taici.png');
+}
+.qh-avatar-taici:active{
+  background-image: url('Elysia/taici2.png');
+}
+.qh-avatar-label>.qh-avatar-label-group {
+    z-index: 69;
+    position: absolute;
+    left: calc(8.8496%);
+    top: calc(2.237%);
+    height: calc(20%);
+    width: calc(84%);
+    color: yellow;
+    font-family: 'xingkai';
+    line-height: 100%;
+    font-size: 3.7em;
+    text-shadow: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+} 
+
+.qh-shousha-big-avatar>.qh-avatar-label-name {/*大图武将名称*/
+  z-index: 63;
+  position: absolute;
+  top: calc(19% - 3%);
+  left: calc(4%);
+  width: calc(9%);
+  height: calc(50%);
+  color: #fff;
+  line-height: 23px;
+  font-size: 1.3em;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+ /* background-image:url('Elysia/wu1.1.png');*/
+   text-shadow: none;
+}
+.qh-window>.qh-hp {
+  left: 41.8%;
+  right: unset;
+  height: auto;
+  width: 2%;
+  /*右移*/
+  bottom: 3.2%;
+  /*上移*/
+  font-size: 0.8em;
+  /*字体大小*/
+  line-height: 0.3em;
+  /*纵向间隔*/
+  position: absolute;
+  display:inline-block;
+  align-items: center;
+  flex-direction: column-reverse;
+  z-index: 64;
+  padding:1.3% 0.2% 0.1% 0.2% ;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: 115% 110%;
+  background-image:url('Elysia/hp_border.png');
+}
+.qh-page-skinavatarlevel {
+    z-index: 64;
+    width: 40%;
+    height: 17%;
+    top: 4%;
+    right: -2%;
+    display: block;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: none;
+}
+.qh-hp>.qh-hptext {
+  /*Hp<=5(勾玉)*/
+  position: sticky;
+  --u: url('Elysia/chr_detail_hp_0.png');
+  --ub: url('Elysia/chr_detail_hp_0_none.png');
+  margin-top: -0.5px;
+  /*纵向间隔*/
+  width: 1.9em;
+  /*宽度*/
+  height: 2em;
+  /*高度*/
+  /*line-height: 100%;*/
+  border: none;
+  background-image: var(--u);
+  background-size: 100% 100%;
+}
+
+.qh-hptext.blank {
+  background-image: var(--ub);
+}
+.qh-hp>.qh-hpGZtext {
+  /*Hp<=5(勾玉)*/
+  position: static;
+  --u: url('Elysia/chr_detail_guo_hp_purple.png');
+  --ub: url('Elysia/chr_detail_guo_hp_purple_2.png');
+  margin-top: -0.5px;
+  /*纵向间隔*/
+  width: 1.9em;
+  /*宽度*/
+  height: 2em;
+  /*高度*/
+  /*line-height: 100%;*/
+  border: none;
+  background-image: var(--u);
+  background-size: 100% 100%;
+}
+
+.qh-hpGZtext.blank {
+  background-image: var(--ub);
+}
+
+.qh-hptextnumber {
+  position: static;
+  margin-top: -0.5px;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.qh-hpnumber {
+  --w: 1.6em;
+  width: var(--w);
+  max-width: 1.6em;
+  height: 2em;
+  position: static;
+  background-position: center;
+  background-size: cover;
+}
+
+.qh-hpsplit {
+  width: 1.6em;
+  height: 0.9em;
+  margin: -0.3em 0 0.1em;
+  position: static;
+  background-image: url('Elysia/chr_detail_hp_split.png');
+  background-size: 100% 100%;
+}
+
+.qh-hp>.qh-mpnode {
+  position: static;
+  margin-bottom: 22%;
+  width: 1.2em;
+  height: 1.2em;
+  border: none;
+  background-image: url('Elysia/mp.png');
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  line-height: 100%;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+}
+
+.qh-hp>.qh-hujianode {
+  position: static;
+  margin-bottom: 22%;
+  width: 1.2em;
+  height: 1.2em;
+  border: none;
+  background-image: url('Elysia/shield.png');
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  line-height: 100%;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+}
+
+/*.qh-lingyu {
+  z-index: 3;
+  position: absolute;
+  left: 28%;
+  bottom: 7%;
+  width: 6.5%;
+  height: 79%;
+  display:none;
+  background-image: url('Elysia/lingyu.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.qh-lingyutext {
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  line-height: 100%;
+  font-size: 1.2em;
+  display:none;
+  color: #c8c3c7;
+  left: 130%;
+  top: 7%;
+  height: calc(100%);
+  width: calc(25%);
+}
+
+.qh-jianghun {
+  z-index: 3;
+  display:none;
+  position: absolute;
+  left: 51%;
+  bottom: 9%;
+  width: 6%;
+  height: 76%;
+  background-image: url('Elysia/jianghun.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.qh-jianghuntext {
+  z-index: 35;
+  display:none;
+  align-items: center;
+  text-align: justify;
+  line-height: 100%;
+  font-size: 1.2em;
+  color: #c8c3c7;
+  left: 130%;
+  top: 7%;
+  height: calc(100%);
+  width: calc(25%);
+}
+*/
+
+.qh-button {
+  z-index: 3;
+  position: absolute;
+  height: 1.9em;
+  line-height: 1.9em;
+  font-size: 1.4em;
+  width: 11.3%;
+  top: 8.1%;
+  left: 73.8%;
+  display: table-cell;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  text-align: center;
+  padding-left: 1.1%;
+  letter-spacing: 0.6em;
+  text-shadow: 2px 2px 2px 2px black;
+}
+
+.qh-button>.qh-otherinfoarrow {
+  display: block;
+  z-index: 15;
+  right: 3px;
+  top: calc(33%);
+  width: 10px;
+  height: 17px;
+  background-image: url('decade/qhly_pic_down_arrow.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: none;
+}
+
+.qh-otherinfoarrow.sel {
+  transform: rotate(90deg);
+  transform-origin: center center;
+}
+
+.qh-button.skillB {
+  left: 49%;
+}
+
+.qh-button.skinB {
+  height: 0;
+  width: 0;
+}
+
+.qh-button.configB {
+  left: 62%;
+}
+
+.qh-button.sel {
+  background-image: url('Elysia/chr_detail_des_tab.png');
+  background-size: 100% 100%;
+  transition: none;
+  color: #744626;
+  font-size:1.4em;
+  width:11.3%;
+  height:6.4%;
+}
+
+.qh-skillinfohead {/*技能介绍框未选按钮*/
+  width: 5.8em;
+  height: 2.3em;
+  line-height: 1.8em;
+  font-family: 'heiti';
+  background-image: url('Elysia/chr_detail_skill_button_normal.png');
+  background-size: 100% 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-right: 2.5em;
+}
+
+.qh-skillinfoimg {}
+
+.qh-skillinfohead.sel {/*技能介绍框选中按钮。*/
+  background-image: url('Elysia/chr_detail_skill_button_selected.png');
+}
+
+.qh-skillinfoheadcontent {
+  background: linear-gradient(180deg, #f7d78e 0%, #ffe1c1 30%,#e8e8e8 60%);
+  font-family: 'heiti';
+  align-self: center;
+  font-size: 1.9em;
+  -webkit-background-clip: text;
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+ /* filter: drop-shadow(2px 0 0 #453325) drop-shadow(-2px 0 0 #453325) drop-shadow(0 2px 0 #453325) drop-shadow(0 -2px 0 #453325);*/
+}
+
+.qh-skillinfobody {/*技能描述文字*/
+  z-index: 32;
+  width: 90%;
+  left: 0;
+  min-height: 90px;
+  padding-left: 4%;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+  margin-top: 3%;
+  text-indent: 55px;
+  line-height:1.3;
+ 
+}
+
+.qh-skillinfobody.show {
+  display: block;
+}
+
+.qh_skilltest {
+  z-index: 32;
+  left: 4%;
+  top: 0.4em;
+  width: 3.6em;
+  height: 2.1em;
+  background-size: 100% 100%;
+  background-image: url('Elysia/chr_try_play_game.png');
+}
+
+.qh-zhubeidong {
+  z-index: -6;
+  left: 4%;
+  top: -0.21em;
+  width: 3em;
+  height: 1.4em;
+  position: absolute;
+  background-size: 100% 100%;
+  opacity: 0.8;
+}
+
+.qh-zhubeidongcontent {/*选中技能名下背景*/
+  z-index: 32;
+  left: calc(4% + 1.8em);
+  top: 0.75em;
+  width: 50%;
+  height: 1.3em;
+  text-indent:20px;
+  line-height: 1.4em;
+  background-size: 100% 100%;
+  background-position:center;
+  background-image: url('Elysia/chr_detail_skill_name_bg.png');
+}
+
+.qh-skinchange-decade-big-dialog {
+  z-index: 10;
+  display: block;
+  left: 2%;
+  top: 2%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+ /* background: url('Elysia/chr_detail_skin_list_bg.png') no-repeat center / cover*/;
+}
+
+.qh-skinchange-decade-big-cover {
+  z-index: 9;
+  display: block;
+  left: 3.6%;
+  top: 0;
+  width: 90%;
+  height: 100%;
+  /* border-radius: 10px; */
+  overflow: hidden;
+}
+
+.qh-skinchange-decade-big-area {
+  z-index: 9;
+  text-align: left;
+  left: 0px;
+  top: -5px;
+  height: 100%;
+  /* border-radius: 10px; */
+  transition: transform 0s;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+.qhavatar-name {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  line-height: 16px;
+  text-align: center;
+ /*text-shadow: none; #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;*/
+  left: 0;
+  top: 24%;
+  right: 26%;
+  bottom: 1%;
+  position: absolute;
+  writing-mode: vertical-lr;
+}
+
+.qhhp-decade-big-wrap {/*大图底部皮肤名称主体框*/
+  right: 38%;
+  bottom: 4.5%;
+  width: 10em;
+  height: 1.6em;
+  border-radius: 6px;
+  z-index: 63;
+  transition: none;
+}
+.qh-decade-big-wrap-border{
+    width:95%;
+    height:20%;
+    background-image:url('Elysia/pifudiwei.png');
+    display: block;
+    z-index:62;
+    bottom:-19px;
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.qh-skinchange-decade-big-skin-text {/*大图底部皮肤名称文字*/
+  color: #f0f0f0;
+ /* width: 120%;
+  height: 90%;*/
+  text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0), 0 0 15px rgb(0, 0, 0);
+  font-size: 1em;
+  line-height: 1em;
+  text-align: center;
+  left:0px;
+  right: 0px;
+  top: 7px;
+  bottom: 0px;
+  margin: auto;
+  /* letter-spacing: -2px; */
+}
+
+.qhhp-decade-big-skininfo-wrap {
+  left: 9%;
+  bottom: 15%;
+  max-width: 100%;
+  border: #8a8884 ;
+  border-radius: 8px;
+  z-index: 63;
+  transition: none;
+  background-color: rgba(1, 1, 1, 0.4);
+  display: flex;
+  flex-flow: column-reverse wrap;
+}
+
+.qhhp-decade-big-skininfotext-wrap {
+  color: #8a8884;
+  text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0), 0 0 15px rgb(0, 0, 0);
+  font-size: 1.2em;
+  display: block;
+  position: relative;
+}/*大图下方皮肤标明框中的武将名称*/
+
+.qh-image-standard>.qhdynamic-big-wrap {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 62;
+  transition: none;
+}
+
+.qh-image-lutou>.qhdynamic-big-wrap {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 94%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 62;
+  transition: none;
+}
+
+.qh-shousha-big-avatar.shousha>.qh-image-lutou>.qhdynamic-big-wrap {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 89.3%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 62;
+  transition: none;
+}
+
+.qhdynamic-big-wrap>.animation-player {
+  display: block;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: inherit;
+  pointer-events: none;
+  height: 100%;
+  transition: none;
+}
+
+.qh-skinchange-big-dynamicChange {/*皮肤动静态开关*/
+  width: 14%;
+  height: 9%;
+  left:1%;
+  top: 50%;
+  background-image: url('Elysia/chr_detail_skin_dynamic.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 64;
+  display:none;
+}
+
+.qh-skinchange-big-dynamicChange[toggle=true] {
+  display: block;
+}
+
+.qh-skinchange-big-dynamicChange.jing {/*皮肤动静态开关*/
+  background-image: url('Elysia/chr_detail_skin_normal.png');
+}
+
+.qh-skinchange-decade-big-title {
+  width: 100%;
+  height: 50px;
+  line-height: 51px;
+  left: 0;
+  top: 0;
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+  color: #4b381a;
+  position: absolute;
+}
+
+.qh-skinchange-decade-big-skinaudiolist {
+  width: 100%;
+  height: auto;
+  top: 55px;
+  left: 0px;
+  color: #4b381a;
+  position: absolute;
+}
+
+.qh-skinchange-decade-big-skillaudioinfo {
+  width: 80%;
+  left: 5%;
+  height: 26px;
+  line-height: 26px;
+  border: 2px solid;
+  border-left: none;
+  border-right: none;
+  padding-left: 30px;
+  border-image: -webkit-linear-gradient(left, transparent, #5d5a53 10%, #4a463a 30%, #656258 50%, transparent 100%) 1;
+  background-image: -webkit-linear-gradient(left, transparent, #5d5a53 10%, #565144 30%, #656050 50%, transparent 100%);
+  font-size: 20px;
+  color: white;
+  position: relative;
+}
+
+.qh-skinchange-decade-big-huawen {
+  height: 26px;
+  width: 17px;
+  background: url('decade/huawen.png') no-repeat;
+  background-size: 100% 100%;
+  left: 1.5%;
+  top: 0;
+}
+
+.qh-skinchange-decade-big-skillaudiobar {
+  width: 26px;
+  height: 26px;
+  float: right;
+}
+
+.qh-skinchange-decade-big-skilltaici {
+  width: 50%;
+  left: 5%;
+  margin-bottom: 20px;
+  position: relative;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.qh-skinchange-decade-big-skinconfig {
+  width: 80%;
+  left: 5%;
+  height: auto;
+  position: relative;
+}
+
+
+.qh-below-menu {
+  z-index: 39;
+  width: calc(11.7%);
+  height: auto;
+  max-height: calc(76% - 20px);
+  overflow: scroll;
+  right: 14.3%;
+  top: 15.8%;
+  border-spacing: 0px 0px;
+  border-collapse: separate;
+}
+
+.qh-below-menu-item {
+  z-index: 3;
+  color: #c2905d;
+  height: 2.5em;
+  width: calc(100%);
+  background-image: url('decade/button.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.qh-shoushabg>.qh-page-introduce {
+  z-index: 31;
+  left: calc(2%);
+  top: 2.7em;
+  width: calc(95%);
+  height: calc(95% - 2.7em);
+  display: block;
+}
+
+.qh-page-introduce>.qh-page-introduce-text {
+  z-index: 32;
+  left: 4%;
+  top: 3%;
+  width: 94%;
+  height: 80%;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  display: block;
+  color: #fff;
+  /* filter: drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black) drop-shadow(0 1px 0 black) drop-shadow(0 -1px 0 black); */
+  overflow: scroll;
+}
+
+.qh-shoushabg>.qh-page-skill {
+  z-index: 31;
+  left: calc(2%);
+  top: 2.7em;
+  width: calc(95%);
+  height: calc(95% - 6em);
+  display: flex;
+  overflow: scroll;
+  flex-direction: column;
+  align-content: center;
+}
+
+.qh-window>.qh-page-skin {/*皮肤切换框大图*/
+  z-index: 1;
+  left: calc(49%);
+  bottom: calc(8%);
+  width: calc(38%);
+  height: calc(34.6%);
+  display: block;
+  transition: all 0.3s linear;
+  /* overflow: hidden; */
+}
+
+/*.qh-page-skin.skinbgfangda {
+  height: 38%;
+}*/
+.qh-skinchange-decade-big-dibuhuo {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  background: url('Elysia/skin-dibuhuo.png') no-repeat bottom / 100% 2em;
+  -webkit-filter: blur(2px);
+  z-index: 39;
+  pointer-events: none;
+}
+
+.qh-page-skin>.qh-page-skin-text {/*皮肤切换框背景*/
+  z-index: 32;
+  left: calc(100%);
+  top: calc(15%);
+  width: calc(100%);
+  height: calc(100%);
+  display: block;
+  background-size: 100% 100%;
+  background-image: url('Elysia/chr_detail_skin_list_bg.png');
+}
+
+.qh-skinchange-shousha-bigarrow {/*皮肤切换左右角标*/
+  bottom:0;
+  left: 88%;
+  width: 9%;
+  height: 6%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  background-image: url('Elysia/chr_detail_skin_list_arrow.png');
+  z-index: 65;
+  display: none;
+}
+
+.qh-skinchange-shousha-bigarrow.left {
+  transform: rotateY(180deg);
+  left: -0.8%;
+}
+
+.qh-skinchange-shousha-bigarrow[data-visiable=true] {
+  display: block;
+}
+
+.qh-shoushabg>.qh-page-config {
+  z-index: 31;
+  left: calc(2%);
+  top: 2.7em;
+  width: calc(95%);
+  height: calc(95% - 2.7em);
+  display: block;
+}
+
+.qh-page-config>.qh-page-config-text {/*选项菜单内文字。*/
+  z-index: 32;
+  left: 20px;
+  top: 4px;
+  width: calc(100% - 40px);
+  height: calc(80%);
+  display: block;
+  color: #fff;
+  overflow: scroll;
+}
+
+.qh-page-skill>.qh-page-skill-button {
+  z-index: 32;
+  padding-left: 3%;
+  padding-top: 0.4em;
+  position: static;
+  max-width: 86%;
+  display: flex;
+  color: #4f3c1e;
+  font-size: 0.7em;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.qh-page-skill>.qh-page-skill-text {
+  z-index: 32;
+  left: 0;
+  position: static;
+  width: 100%;
+  display: table;
+  color: #f0d09b;
+  /* overflow: scroll; */
+}
+
+/*.qh-page-skill>.qh-page-skill-voice {
+  z-index: 33;
+  right: 5%;
+  top: 2.1em;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  background-size: 100% 100%;
+  background-image: url('Elysia/chr_spell_list_btn.png');
+}*/
+
+.qh-page-skill-taicibalckbg {
+  z-index: 40;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
+}
+/*台词页背景*/
+.qh-page-skill-taici {
+ /* left: calc(50% - 380px);*/
+  left: 16%;
+ /* top: calc(50% - 170px);*/
+  top:9%;
+  width: calc(38%);
+  height: calc(83%);
+  background-size: 100% 100%;
+  background-image: url('Elysia/TaiciBg.png');
+}
+/*台词页内容*/
+.qh-page-skill-taicineirong {
+  left: 5px;
+  top: 5px;
+  width: calc(90%);
+  height: calc(55%);
+  overflow: scroll;
+  /* font-family: 'QH_HYZLSJ'; */
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: green;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: green;
+  border-radius: 5px;
+}
+
+.qh-skillTaiciContent {
+  display: table-row;
+  position: static;
+  color: #fff;
+  font-weight: bold;
+  font-size: 22px;
+  text-shadow:1px 1px 2px black;
+ /* filter: drop-shadow(2px 0 0 #453325) drop-shadow(-2px 0 0 #453325) drop-shadow(0 2px 0 #453325) drop-shadow(0 -2px 0 #453325);*/
+}
+/*.qh-skillTaiciContent::after{
+  content: "";
+  display:inline-block;
+  width:500px;
+  height:25px;
+  background-size: 100% 100%;
+  background: url(Elysia/shengyingtiao.png) no-repeat;
+  position:absolute;
+  margin-top: -2px;
+  margin-left: -120px;
+  z-index: -1;
+
+}*/
+.qh-victoryName {
+  display: table-row;
+  position: static;
+  color: #fff;
+  font-weight: bold;
+  font-size: 22px;
+  text-shadow:1px 1px 2px black;
+}
+/*.qh-victoryName::after{
+  content: "";
+  display:inline-block;
+  width:500px;
+  height:25px;
+  background-size: 100% 100%;
+  background: url(Elysia/shengyingtiao.png) no-repeat;
+  position:absolute;
+  margin-top: -2px;
+  margin-left: -120px;
+  z-index: -1;
+
+}*/
+.qh-skillTaicibg {
+  display: inline-block;
+  width: calc(100%);
+  height: 12%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 15px;
+  position: static;
+ /* background: url('Elysia/upgrade_item_long_bg.png') no-repeat center / 100% 100%;*/
+  transition: none;
+}
+
+.qh-skillTaicibg[data-type=right] {
+  margin-right: 0;
+}
+
+.qh-skillTaicibg[data-type=bottom] {
+  margin-bottom: 0;
+}
+
+.qh-skillTaicibg[data-type=end] {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.qh-trumpet {
+  width: 45px;
+  height: 45px;
+  left: 6px;
+  top: 6px;
+  position: relative;
+  background-size: 100% 100%;
+  background-image: url('Elysia/chr_spell_voice_2.png');
+}
+
+.qh-trumpet.origin {
+  background-image: url('Elysia/chr_spell_voice.png');
+}
+
+.qh-taiciinner {
+  width: auto;
+  height: 25px;
+  left: 55px;
+  top: -25px;
+  color: #fff;
+  position: relative;
+  font-size: 18px;  
+ /* font-weight: bold;*/
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.qh-page-skin>.qh-hide-skin-button {
+  z-index: 35;
+  left: 159px;
+  bottom: 18px;
+  width: calc(9.86%);
+  height: calc(9.58%);
+  display: block;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('rq/qhly_skin_button_rq.png');
+}
+
+.qh-skinchange-shousha-big-skin {
+  z-index: 10;
+  display: block;
+  left: 0;
+  top: 12px;
+  /*width: 300px;
+    height: 150px;*/
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.qh-skinchange-shousha-big-skin.sel {
+  transform: scale(1.12);
+}
+
+.qh-page-skinavatarlevel {/*选择皮肤选项品质*/
+  width: 51.84%;
+  height: 20%;
+  top:5%;
+  left:48%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 98;
+  transition: none;
+}
+
+.qh-skinchange-shousha-big-skin>.primary-avatar {/*皮肤选项框*/
+  left: 3.8%;
+  top: auto;
+  bottom: 1%;
+  width: 90.5%;
+  height: 90%;
+  opacity: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border-radius:4%;
+  transition-property: opacity, transform;
+  box-shadow:2px 2px 1px rgba(1, 1, 1, 0.3);
+  z-index: 61;
+}
+
+.qh-skinchange-decade-big-dialog[data-outcrop-skin='on'] .primary-avatar {
+  height: 96%;
+  clip-path: url(#solo-clip);
+  -webkit-clip-path: url(#solo-clip);
+}
+
+.qh-skinchange-decade-big-dialog[data-outcrop-skin='on'].shousha .primary-avatar {
+  height: 103.4%;
+  clip-path: url(#solo-clip);
+  -webkit-clip-path: url(#solo-clip);
+}
+
+.qh-shousha-big-avatar.unseen>.qh-image-standard,
+.qh-shousha-big-avatar.d-skin>.qh-image-standard,
+.qh-shousha-big-avatar.d-skin2>.qh-image-standard,
+.qh-shousha-big-avatar.unseen>.qh-image-lutou,
+.qh-shousha-big-avatar.d-skin>.qh-image-lutou,
+.qh-shousha-big-avatar.d-skin2>.qh-image-lutou {
+  opacity: 0;
+}
+
+.qhcamp-big-wrap.shousha {
+  display: block;
+  left: -8px;
+  top: -4px;
+  width: 33px;
+  height: 118px;
+  transition: none;
+  z-index: 95;
+}
+
+.qhcamp-shousha-big-back {
+  z-index:92;
+  left: -4.2%;
+  bottom: -4%;
+  height: 101%;
+  width: 107%;
+  background-size: 100% 100%;
+  transition: none;
+  pointer-events: none;
+}
+.qhcamp-shousha-big-back[data-pinzhi='普通'] {
+  background-image: url('../image/decoration/skinFrm1.png');
+}
+.qhcamp-shousha-big-back[data-pinzhi='精良'] {
+  background-image: url('../image/decoration/skinFrm2.png');
+}
+.qhcamp-shousha-big-back[data-pinzhi='精品'] {
+  background-image: url('../image/decoration/skinFrm3.png');
+}
+.qhcamp-shousha-big-back[data-pinzhi='稀有'] {
+  background-image: url('../image/decoration/skinFrm3.png');
+}
+.qhcamp-shousha-big-back[data-pinzhi='史诗'] {
+  background-image: url('../image/decoration/skinFrm4.png');
+}
+.qhcamp-shousha-big-back[data-pinzhi='传说'] {
+  background-image: url('../image/decoration/skinFrm5.png');
+}
+.qhcamp-shousha-big-back[data-pinzhi='绝版'] {
+  background-image: url('../image/decoration/skinFrm8.png');
+}
+.qhcamp-shousha-big-back[data-pinzhi='动态'] {
+  background-image: url('../image/decoration/skinFrm7.png');
+}
+.qhcamp-shousha-big-back[data-pinzhi='限定'] {
+  background-image: url('../image/decoration/skinFrm6.png');
+}
+
+
+.qhhp-shousha-big-wrap{
+  top:15px;
+  left:4px;
+  width: 20%;
+  height:60%;
+  z-index: 80;
+  transition: none;
+}
+.qh-skinchange-shousha-big-skin-text {/*皮肤选项框皮肤名称*/
+  z-index: 80;
+  writing-mode: lr-tb;
+  color: #fff;
+  width: 90%;
+  height: auto;
+  font-size: 15px;
+  font-weight: 550;
+  text-shadow:1px 1px rgba(1, 1, 1, 0.7);
+  text-align: center;
+  left: 0;
+  top: 0;
+  margin: auto;
+  padding:10px 0 10px 0;
+  border-radius: 4px 0 8px 0;
+  background-size: 100% 100%;
+  background-color: rgba(255,192,203,0.4);
+  /* letter-spacing: -2px; */
+}
+.qh-skinchange-shousha-big-skin-text[data-camp='wei'] {
+   background-color: #0E4AB3;
+}
+.qh-dynamictrue {
+  z-index: 80;
+  left:2.5%;
+  top: 77%;
+  width: 30px;
+  height: 30px;
+  background-size: 100% 100%;
+  background-image: url('Elysia/dynamic.png');
+  display: none;
+}
+
+.qh-dynamictrue[dynamic='true'] {
+  display: block;
+}
+
+.qh-skinchange-big-skinBar {
+  bottom: -5%;
+  left: 7%;
+  position: absolute;
+  width: 68%;
+  height: 7%;
+  display: flex;
+  justify-content: center;
+}
+
+.qh-skinchange-big-skinBar>div.sel {
+  filter: brightness(1.2);
+}
+
+#qhly_dgselect.selectless {
+  filter: grayscale(1);
+  pointer-events: none;
+}

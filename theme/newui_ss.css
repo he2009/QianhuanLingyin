@@ -1,62 +1,7 @@
 @font-face {
-  font-family: 'QH_HYZLSJ';
-  src: local('隶简'), url('../font/QH_HYZLSJ.woff2');
+    font-family: 'fzbwks';
+    src: local('方正北魏楷书'), url('../font/FZBWKSJW.woff2');
 }
-
-@keyframes qh-jinjie {
-  0% {
-    background-image: url('shousha/jinjie6.png');
-  }
-
-  42.5% {
-    background-image: url('shousha/jinjie0.png');
-  }
-
-  45% {
-    background-image: url('shousha/jinjie1.png');
-  }
-
-  47.5% {
-    background-image: url('shousha/jinjie2.png');
-  }
-
-  50% {
-    background-image: url('shousha/jinjie3.png');
-  }
-
-  52.5% {
-    background-image: url('shousha/jinjie4.png');
-  }
-
-  55% {
-    background-image: url('shousha/jinjie5.png');
-  }
-
-  57.5% {
-    background-image: url('shousha/jinjie6.png');
-  }
-
-  100% {
-    background-image: url('shousha/jinjie6.png');
-  }
-}
-
-@keyframes qh-guangmangnei {
-  from {}
-
-  to {
-    transform: rotateZ(-360deg);
-  }
-}
-
-@keyframes qh-guangmangwai {
-  from {}
-
-  to {
-    transform: rotateZ(360deg);
-  }
-}
-
 .qh-background {
   --w: 100%;
   z-index: 13;
@@ -70,15 +15,14 @@
   /* min-height: 100%; */
   transform: translate(-50%, -50%);
   background-image: url('shousha/bg_lobby.jpg');
-  font-family: 'shousha';
+  font-family: 'fzbwks';
   text-shadow: none;
-  font-size: 16px;
+  
 }
-
 .qh-window {
   position: absolute;
-  height: 1338px;
-  width: 778px;
+  height:100%;
+  width:100%;
   left: 50%;
   top: 50%;
   display: block;
@@ -88,116 +32,93 @@
   /* background-image: url('newui_background.png'); */
   z-index: 30;
 }
-
-.qh-window>.qh-back {
+.qh-window>.qh-back {/*返回按钮*/
   --w: 10%;
-  z-index: 1;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  width: calc(var(--w));
-  height: calc(var(--w) * 1.6);
-  display: block;
+  z-index: 3;
+  position:absolute;
+  display: flex;
+  left:5%;
+  top: 0;
+  width: 4.2%;
+  height: 6%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-image: url('shousha/exitbutton.png');
+  opacity: 1;
 }
-
-.qh-window>.qh-dibuhuo {
-  --w: 45%;
+.qh-window>.qh-back-border{/*返回框*/
   z-index: 1;
-  position: absolute;
-  right: -9%;
-  bottom: 0px;
-  width: calc(var(--w));
-  height: calc(var(--w) * 0.16);
-  display: block;
+  position:absolute;
+  display: flex;
+  left:0;
+  top:0;
+  width:25%;
+  height: 10.6%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-image: url('shousha/chr_detail_prop_cnt_bg.png');
+  background-image: url('shousha/back-border.png');
 }
 
-.qh-shoushabg {
+.qh-shoushabg {/*选项框上*/
   z-index: 3;
-  top: 8%;
+  top: 10%;
   right: 13%;
   width: 38%;
-  height: 53%;
+  height: 55%;
   background-image: url('shousha/chr_detail_des_bghead.png');
   background-size: 100% 2.7em;
   background-repeat: no-repeat;
   position: absolute;
-  transition: all 0.3s linear;
+ 
 }
 
-.qh-shoushabgbody {
-  top: calc(8% + 2.7em);
-  right: 12.4%;
-  width: 38.6%;
-  height: 45%;
-  margin-top: -0.1%;
-  margin-bottom: -0.1%;
+.qh-shoushabgbody {/*选项框詳情中*/
+  top: calc(8% + 3em);
+  right: 13.25%;
+  width: 37.72%;
+  height: 40%;
   background-image: url('shousha/chr_detail_des_bgbody.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   position: absolute;
-  transition: all 0.3s linear;
+  
 }
 
-.qh-shoushabgtail {
-  top: calc(52.6% + 2.7em);
-  right: 12.4%;
-  width: 38.7%;
-  height: 4%;
-  background-image: url('shousha/chr_detail_des_bgtail.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  position: absolute;
-  transition: all 0.3s linear;
-}
-
-.qh-shoushabg.suoxiao {
-  height: 41%;
-}
-
-.qh-shoushabgbody.suoxiao {
-  height: 33%;
-}
-
-.qh-shoushabgtail.suoxiao {
-  top: calc(40.6% + 2.7em);
-}
-
-
-.qh-window>.qh-shousha-big-avatar {
-  z-index: 61;
+.qh-window>.qh-shousha-big-avatar {/*角色框体大图*/
+  z-index: 63;
   position: absolute;
   left: calc(16%);
-  top: calc(3%);
+  top: calc(6.5%);
   width: 28%;
   height: 93%;
   display: block;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-image: url('../image/newui_avatar.png');
+  /*background-image: url('../image/newui_avatar.png');*/
+   transition:all 0.3s;
 }
-
-.qh-shousha-big-avatar>.qh-image-standard {
+.qhcamp-big-wrap.shousha>.qhcamp-name {
+width: 98%;
+height: 93%;
+}
+.qh-shousha-big-avatar>.qh-image-standard {/*角色大图*/
   --p: 50%;
-  z-index: 1;
-  position: absolute;
-  bottom: calc(3.6%);
-  left: calc(5%);
-  width: calc(90%);
-  height: calc(92.4%);
+  z-index: 60;
+  display: flex;
+  box-shadow:2px 2px 2px #332211;
+  bottom: calc(3.4%);
+  left: calc(1%);
+  width:calc(99%);
+  height: calc(93%);
   background-size: cover;
   background-position: var(--p);
+  background-color: #644933;
   background-repeat: no-repeat;
   border-radius: 4px;
-  transition: none;
+  transition:none;
 }
 
-.qhly_blackbg>.qh-image-standard {
+.qhly_blackbg>.qh-image-standard {/*动皮大图调整框*/
   --p: 50%;
   --w: 1vw;
   z-index: 1;
@@ -212,33 +133,33 @@
   border-radius: 4px;
   transition: none;
 }
-
+/*武将露头*/
 .qh-shousha-big-avatar>.qh-image-lutou {
-  z-index: 61;
-  position: absolute;
-  bottom: calc(3.6%);
-  left: calc(5%);
-  width: calc(90%);
-  height: calc(98%);
+  z-index: 60;
+  display: flex;
+  bottom: calc(3.4%);
+  left: calc(1%);
+  width:calc(99%);
+  height: calc(95%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 4px;
-  transition: none;
+  transition:none;
 }
 
 .qh-shousha-big-avatar.shousha>.qh-image-lutou {
-  z-index: 61;
-  position: absolute;
-  bottom: calc(3.6%);
-  left: calc(6.7%);
-  width: calc(87.8%);
-  height: calc(103%);
+  z-index: 60;
+  display: flex;
+  bottom: calc(3.4%);
+  left: calc(1%);
+  width:calc(99%);
+  height: calc(95%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 4px;
-  transition: none;
+  transition:none;
 }
 
 
@@ -258,13 +179,13 @@
   transition: none;
 }
 
-.qh-shousha-big-avatar>.qh-shousha-skintype {
+.qh-shousha-big-avatar>.qh-shousha-skintype {/*身份标志*/
   display: flex;
   flex-direction: column;
   height: 26%;
   width: 19%;
-  top: 17%;
-  right: 2%;
+  top: 13%;
+  right: -2%;
   position: absolute;
   z-index: 64;
   transition: none;
@@ -345,13 +266,13 @@
   width: calc(20%);
   height: calc(50%);
   color: #B5AB82;
-  font-size: 17px;
+  font-size: 16px;
   display: block;
   font-weight: bold;
   filter: drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black) drop-shadow(0 1px 0 black) drop-shadow(0 -1px 0 black);
 }
 
-.qh-shousha-big-avatar>.qh-avatar-label-other {
+.qh-shousha-big-avatar>.qh-avatar-label-other {/*武将框*/
   pointer-events: none;
   --u: url('shousha/detail_cong.png');
   z-index: 63;
@@ -367,29 +288,29 @@
   background-image: var(--u);
 }
 
-.qh-shousha-big-avatar>.qh-avatar-rank {
-  z-index: 63;
-  top: 3%;
-  right: 4%;
-  width: 18%;
-  height: 12%;
+.qh-shousha-big-avatar>.qh-avatar-rank {/*武将大图等阶*/
+  z-index: 64;
+  top: 72%;
+  left: 38%;
+  width:24%;
+  height: 15.6%;
   background-size: 100% 100%;
   transition: none;
   pointer-events: none;
 }
 
-.qh-shousha-big-avatar>.qh-skin-rank {
-  z-index: 63;
+.qh-shousha-big-avatar>.qh-skin-rank {/*武将大图皮肤品质*/
+  z-index: 64;
   top: 3%;
-  right: 4%;
-  width: 18%;
-  height: 12%;
+  right:1%;
+  width: 32%;
+  height: 12.6%;
   background-size: 100% 100%;
   transition: none;
   pointer-events: none;
 }
 
-/* .qh-avatar-label>.qh-avatar-label-rank {
+ .qh-avatar-label>.qh-avatar-label-rank {
     z-index: 35;
     position: absolute;
     top: calc(10%);
@@ -400,116 +321,9 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: block;
-} */
+} 
 
-/* .qh-shousha-big-avatar>.qh-avatar-dragonhead {
-    z-index: 62;
-    left: calc(93.8%);
-    bottom: calc(51%);
-
-    width: calc(12%);
-    height: calc(34%);
-    background-size: 100%;
-    background-position: bottom;
-    background-repeat: repeat-y;
-    background-image: url('shousha/chr_star_off.png');
-} */
-
-.qh-shousha-big-avatar>.qh-avatar-dragontail {
-  z-index: 63;
-  left: calc(67.4%);
-  top: calc(48%);
-  width: calc(40%);
-  height: calc(52%);
-  background-size: 100% 100%;
-  background-position: center;
-  background-image: url('shousha/chrfrm_flower1.png');
-  transition: none;
-}
-
-.qh-avatar-dragontail>.qh-avatar-jindutiao {
-  z-index: 1;
-  left: calc(76%);
-  bottom: calc(37.3%);
-  width: calc(10%);
-  /* height: calc(60.3%); */
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-image: url('shousha/jindutiao.png');
-  background-size: cover;
-  transition: none;
-}
-
-.qh-avatar-dragontail>.qh-avatar-jindufenge {
-  z-index: 2;
-  left: calc(73.4%);
-  bottom: calc(35.5%);
-  width: calc(14.4%);
-  height: calc(64%);
-  background-size: 100% 100%;
-  background-position: center;
-  background-image: url('shousha/jinjiefenge.png');
-  transition: none;
-}
-
-.qh-avatar-dragontailball {
-  z-index: 1;
-  left: 37%;
-  top: 66%;
-  width: 59%;
-  height: 29.8%;
-  background-size: 100% 100%;
-  background-image: url('shousha/chr_advance_btn1.png');
-}
-
-.qh-avatar-dragontailball:active {
-  filter: brightness(2);
-}
-
-.qh-avatar-dragontailballguangmangnei {
-  pointer-events: none;
-  z-index: 2;
-  left: 17%;
-  top: 60%;
-  width: 100%;
-  height: 42.8%;
-  background-size: 100% 100%;
-  animation: qh-guangmangnei 5s infinite linear;
-  background-image: url('shousha/guangmang0.png');
-}
-
-.qh-avatar-dragontailballguangmangwai {
-  pointer-events: none;
-  z-index: 2;
-  left: 17%;
-  top: 60%;
-  width: 100%;
-  height: 42.8%;
-  background-size: 100% 100%;
-  animation: qh-guangmangwai 5s infinite linear;
-  background-image: url('shousha/guangmang1.png');
-}
-
-.qh-avatar-dragontailjinjie {
-  pointer-events: none;
-  z-index: 3;
-  left: 15%;
-  top: 59%;
-  width: 104%;
-  height: 44%;
-  background-size: 100% 100%;
-  animation: qh-jinjie 3s infinite linear;
-  background-image:
-    url('shousha/jinjie0.png'),
-    url('shousha/jinjie1.png'),
-    url('shousha/jinjie2.png'),
-    url('shousha/jinjie3.png'),
-    url('shousha/jinjie4.png'),
-    url('shousha/jinjie5.png'),
-    url('shousha/jinjie6.png');
-}
-
-.qh-avatar-dragontailcur {
+.qh-avatar-dragontailcur {/*进阶框数值*/
   z-index: 4;
   left: 88%;
   top: 59.4%;
@@ -517,7 +331,7 @@
   height: 8%;
   background-size: 100% 100%;
   background-image: url('shousha/chr_prg_cur.png');
-  display: flex;
+  display: none;/*已隐藏*/
   align-items: center;
   justify-content: center;
   text-align: justify;
@@ -525,8 +339,7 @@
   font-size: 1.2em;
   transition: none;
 }
-
-.qh-avatar-dragontailtotal {
+.qh-avatar-dragontailtotal {/*进阶框数字*/
   z-index: 3;
   left: 88%;
   top: -1.2%;
@@ -534,38 +347,12 @@
   height: 8%;
   background-size: 100% 100%;
   background-image: url('shousha/chr_prg_total.png');
-  display: flex;
+  display: none;/*已隐藏*/
   align-items: center;
   justify-content: center;
   text-align: justify;
   line-height: 0%;
   font-size: 1.2em;
-}
-
-.qh-avatar-dragontailstar {
-  display: flex;
-  right: 17%;
-  width: 19%;
-  height: 60%;
-  bottom: 101%;
-  font-size: 0.9em;
-  line-height: 0.9em;
-  flex-direction: column;
-  z-index: 63;
-}
-
-.qh-avatar-dragontailstartext {
-  position: static;
-  width: 180%;
-  height: 120%;
-  border: none;
-  background-image: url('shousha/chr_star_off.png');
-  background-size: cover;
-  background-position: top;
-}
-
-.qh-avatar-dragontailstartext.jinjie {
-  background-image: url('shousha/chr_star_on.png');
 }
 
 .qh-avatar-shoushabuttons {
@@ -577,50 +364,49 @@
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
+  transition: none;
 }
 
 .qh-avatar-shoushabuttons>div:active {
   filter: contrast(0.4) brightness(2);
 }
 
-.qh-avatar-share {
-  position: static;
-  width: 4em;
-  height: 4em;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url('shousha/chr_detail_btn_share.png');
-}
-
 .qh-avatar-default {
+  z-index: 99;
   position: static;
-  width: 4em;
-  height: 4em;
+  width: 5em;
+  height: 5em;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('shousha/chr_detail_btn_set_my_image.png');
+  background-image: url('shousha/shewei2.png');
+  transition: none;
 }
-
-.qh-avatar-shiyong {
-  position: static;
-  width: 4em;
-  height: 4em;
+.qh-avatar-default2{
+  z-index: 99;
+  position: absolute;
+  bottom:0;
+  width: 5em;
+  height: 5em;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('shousha/chr_detail_btn_trial.png');
+  background-image: url('shousha/dangqian2.png');
+  transition: none;
 }
 
-.qh-avatar-guofu {
+.qh-avatar-taici {
+  z-index: 99;
   position: static;
-  width: 3.1em;
-  height: 3.1em;
-  background:
-    url('shousha/adv_ranklist_icon1.png') no-repeat center / cover,
-    url('shousha/adv_icon_bg1.png') no-repeat center / contain;
+  width: 5em;
+  height: 5em;
+  bottom:5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('shousha/taici.png');
 }
-
-
-/* .qh-avatar-label>.qh-avatar-label-group {
+.qh-avatar-taici:active{
+  background-image: url('shousha/taici2.png');
+}
+.qh-avatar-label>.qh-avatar-label-group {
     z-index: 35;
     position: absolute;
     left: calc(8.8496%);
@@ -639,79 +425,67 @@
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-} */
+} 
 
-.qh-shousha-big-avatar>.qh-avatar-label-name {
+.qh-shousha-big-avatar>.qh-avatar-label-name {/*大图武将名称*/
   z-index: 63;
   position: absolute;
   top: calc(19%);
-  left: calc(-3.3%);
+  left: calc(-1.2%);
   width: calc(9%);
   height: calc(50%);
-  color: white;
-  line-height: 100%;
-  font-size: 1.6em;
+  color: #fffe;
+  line-height: 23px;
+  font-size: 1.3em;
   display: flex;
-  align-items: center;
+  align-self: center;
   flex-direction: column;
+ /* background-image:url('shousha/wu1.1.png');*/
+   text-shadow: none;
 }
-
-.qh-shoushaName-pre {
-  position: relative;
-  width: 106%;
-  height: 9%;
-  background-size: 100% 100%;
-}
-
-.qh-shoushaName-other {
-  position: relative;
-  filter: drop-shadow(1px 0 0 rgb(36, 35, 35)) drop-shadow(-1px 0 0 rgb(36, 35, 35)) drop-shadow(0 1px 0 rgb(36, 35, 35)) drop-shadow(0 -1px 0 rgb(36, 35, 35));
-}
-
-/* .qh-shousha-big-avatar>.qh-avatar-label-name {
-    z-index: 80;
-    position: absolute;
-    top: calc(1%);
-    left: calc(-23.7%);
-    width: calc(47.79%);
-    height: calc(52.13%);
-    color: white;
-    line-height: 100%;
-    font-size: 1.6em;
-    filter: drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black) drop-shadow(0 1px 0 black) drop-shadow(0 -1px 0 black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-} */
-
 .qh-window>.qh-hp {
-  display: flex;
-  left: 15.03%;
+  left: 41.4%;
   right: unset;
-  width: 2.6%;
+  height: auto;
+  width: 2%;
   /*右移*/
-  bottom: 10%;
+  bottom: 3.3%;
   /*上移*/
-  font-size: 0.9em;
+  font-size: 0.8em;
   /*字体大小*/
-  line-height: 0.9em;
+  line-height: 0.3em;
   /*纵向间隔*/
-  display: flex;
+  position: absolute;
+  display:inline-block;
   align-items: center;
   flex-direction: column-reverse;
-  z-index: 63;
-  transition: none;
+  z-index: 64;
+  padding:1.3% 0.2% 0.1% 0.6% ;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: 115% 110%;
+  background-image:url('shousha/hp_border.png');
 }
-
+.qh-page-skinavatarlevel {
+    z-index: 64;
+    width: 40%;
+    height: 17%;
+    top: 4%;
+    right: -2%;
+    display: block;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: none;
+}
 .qh-hp>.qh-hptext {
   /*Hp<=5(勾玉)*/
-  position: static;
+  position: sticky;
   --u: url('shousha/chr_detail_hp_0.png');
   --ub: url('shousha/chr_detail_hp_0_none.png');
-  margin-top: -0.5px;
+  margin-top: 1px;
   /*纵向间隔*/
-  width: 1.9em;
+  width: 2em;
   /*宽度*/
   height: 2em;
   /*高度*/
@@ -730,7 +504,7 @@
   position: static;
   --u: url('shousha/chr_detail_guo_hp_purple.png');
   --ub: url('shousha/chr_detail_guo_hp_purple_2.png');
-  margin-top: -0.5px;
+  margin-top: 1px;
   /*纵向间隔*/
   width: 1.9em;
   /*宽度*/
@@ -748,9 +522,9 @@
 
 .qh-hptextnumber {
   position: static;
-  margin-top: -0.5px;
-  width: 2em;
-  height: 2em;
+  margin-top: 1px;
+  width: 1.7em;
+  height: 1.7em;
   display: flex;
   justify-content: center;
 }
@@ -768,7 +542,7 @@
 .qh-hpsplit {
   width: 1.6em;
   height: 0.9em;
-  margin: -0.3em 0 0.1em;
+  margin: 0.1em 0 0.1em;
   position: static;
   background-image: url('shousha/chr_detail_hp_split.png');
   background-size: 100% 100%;
@@ -817,6 +591,7 @@
   bottom: 7%;
   width: 6.5%;
   height: 79%;
+  display:none;/*已隐藏*/
   background-image: url('shousha/lingyu.png');
   background-size: 100% 100%;
   background-position: center;
@@ -830,6 +605,7 @@
   text-align: justify;
   line-height: 100%;
   font-size: 1.2em;
+  display:none;/*已隐藏*/
   color: #c8c3c7;
   left: 130%;
   top: 7%;
@@ -839,6 +615,7 @@
 
 .qh-jianghun {
   z-index: 3;
+  display:none;/*已隐藏*/
   position: absolute;
   left: 51%;
   bottom: 9%;
@@ -852,7 +629,8 @@
 
 .qh-jianghuntext {
   z-index: 35;
-  display: flex;
+  display:none;/*已隐藏*/
+  /*display: flex;*/
   align-items: center;
   text-align: justify;
   line-height: 100%;
@@ -868,19 +646,19 @@
 .qh-button {
   z-index: 3;
   position: absolute;
-  height: 1.9em;
+  height: 1.93em;
   line-height: 1.9em;
   font-size: 1.4em;
-  width: 11.3%;
-  top: 8.1%;
+  width: 11.8%;
+  top: 10%;
   left: 73.8%;
+  display: table-cell;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   color: #9b908a;
   text-align: center;
   padding-left: 1.1%;
   letter-spacing: 0.6em;
-  text-shadow: 2px 2px 2px 2px black;
 }
 
 .qh-button>.qh-otherinfoarrow {
@@ -894,7 +672,7 @@
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  transition: rotateY 0.5s;
+  transition: none;
 }
 
 .qh-otherinfoarrow.sel {
@@ -903,7 +681,7 @@
 }
 
 .qh-button.skillB {
-  left: 49.9%;
+  left: 49%;
 }
 
 .qh-button.skinB {
@@ -917,52 +695,55 @@
 
 .qh-button.sel {
   background-image: url('shousha/chr_detail_des_tab.png');
-  color: white;
-  text-shadow: none;
+  background-size: 100% 100%;
+  transition: none;
+  color: #744626;
+  font-size:1.4em;
+  height:6.5%;
 }
 
-.qh-skillinfohead {
-  padding-left: 1%;
+.qh-skillinfohead {/*技能介绍框未选按钮*/
   width: 5.5em;
-  height: 3.4em;
+  height: 2.5em;
   line-height: 1.8em;
-  font-family: 'QH_HYZLSJ';
+  font-family: 'fzbwks';
   background-image: url('shousha/chr_detail_skill_button_normal.png');
   background-size: 100% 100%;
   position: relative;
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-right: 2.5em;
+  margin-right: 1em;
+  margin-top: 0.3em;
 }
 
-.qh-skillinfoimg {}
-
-.qh-skillinfohead.sel {
+.qh-skillinfohead.sel {/*技能介绍框选中按钮。*/
   background-image: url('shousha/chr_detail_skill_button_selected.png');
 }
 
 .qh-skillinfoheadcontent {
-  background: linear-gradient(180deg, #f7d78e 0%, #af8e31 50%);
-  font-family: 'QH_HYZLSJ';
+  background: linear-gradient(180deg, #f7d78e 0%, #ffe1c1 30%,#e8e8e8 60%);
+  font-family: 'fzbwks';
   align-self: center;
-  font-weight: 600;
   font-size: 1.9em;
   -webkit-background-clip: text;
   text-shadow: none;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(2px 0 0 #453325) drop-shadow(-2px 0 0 #453325) drop-shadow(0 2px 0 #453325) drop-shadow(0 -2px 0 #453325);
+ /* filter: drop-shadow(2px 0 0 #453325) drop-shadow(-2px 0 0 #453325) drop-shadow(0 2px 0 #453325) drop-shadow(0 -2px 0 #453325);*/
 }
 
-.qh-skillinfobody {
-  width: 93%;
+.qh-skillinfobody {/*技能描述文字*/
+  z-index: 32;
+  width: 90%;
   left: 0;
   min-height: 90px;
-  padding: 12% 4%;
-  font-size: 17px;
-  color: #d9c299;
+  padding-left: 4%;
+  font-size: 18px;
+  color: #ffe1c1;
   display: none;
-  margin-top: -2px;
+  margin-top: 3%;
+  text-indent: 55px;
+  line-height:1.3;
 }
 
 .qh-skillinfobody.show {
@@ -978,39 +759,55 @@
   background-size: 100% 100%;
   background-image: url('shousha/chr_try_play_game.png');
 }
-
+/*主被动图标*/
 .qh-zhubeidong {
-  z-index: 32;
+  z-index: -6;
   left: 4%;
-  top: 0.4em;
-  width: 2em;
-  height: 2em;
+  top: -0.21em;
+  width: 3em;
+  height: 1.4em;
+  position: absolute;
   background-size: 100% 100%;
 }
 
-.qh-zhubeidongcontent {
+/*选中技能名下背景*/
+/*.qh-zhubeidongcontent {
   z-index: 32;
   left: calc(4% + 1.8em);
   top: 0.75em;
-  width: 25%;
+  width: 50%;
   height: 1.3em;
-  padding-left: 2%;
+  text-indent:20px;
   line-height: 1.4em;
   background-size: 100% 100%;
+  background-position:center;
   background-image: url('shousha/chr_detail_skill_name_bg.png');
-}
-
+}*/
+/*皮肤选择栏背景图片*/
 .qh-skinchange-decade-big-dialog {
   z-index: 10;
   display: block;
   left: 0;
-  top: 0;
-  width: 100%;
+  top: 12%;
+  width: 99%;
   height: 100%;
   position: relative;
   background: url('shousha/chr_detail_skin_list_bg.png') no-repeat center / cover;
 }
-
+.qh-skinchange-decade-big-dialog ::-webkit-scrollbar {
+  width: 10px;
+}
+.qh-skinchange-decade-big-dialog::-webkit-scrollbar-track {
+  background: rgb(239, 239, 239);
+  border-radius: 2px;
+}
+.qh-skinchange-decade-big-dialog::-webkit-scrollbar-thumb {
+  background: #40a0ff49;
+  border-radius: 10px;
+}
+.qh-skinchange-decade-big-dialog::-webkit-scrollbar-thumb:hover {
+  background: #40a0ff;
+}
 .qh-skinchange-decade-big-cover {
   z-index: 9;
   display: block;
@@ -1026,7 +823,7 @@
   z-index: 9;
   text-align: left;
   left: 0px;
-  top: 0px;
+  top: -5px;
   height: 100%;
   /* border-radius: 10px; */
   transition: transform 0s;
@@ -1034,88 +831,7 @@
   display: block;
   position: relative;
 }
-
-/* .qh-skinchange-decade-big-autoskin {
-    left: calc(19%);
-    width: 78px;
-    bottom: 6%;
-    height: 27px;
-    z-index: 41;
-    overflow: hidden;
-} */
-
-/* .qh-skinchange-decade-big-autoskinborder {
-    left: 0;
-    width: 100%;
-    bottom: 0;
-    height: 100%;
-    background-size: 100% 100%;
-    background-position: 100%;
-    z-index: 41;
-    background-image: url('dc_autoskinborder.png');
-}
-
-.qh-skinchange-decade-big-autoskinitem {
-    left: calc(-67%);
-    width: 130px;
-    bottom: 1%;
-    height: 25px;
-    background-size: 100% 100%;
-    background-position: 100%;
-    z-index: 40;
-    background-image: url('dc_autoskinitem.png');
-    transition: all 1s;
-}
-
-.qh-skinchange-decade-big-autoskin[data-auto=true]>.qh-skinchange-decade-big-autoskinitem {
-    left: calc(0%);
-} */
-
-/* .qh-skinchange-decade-big-skin {
-    z-index: 10;
-    display: block;
-    left: 63px;
-    top: 0px;
-    bottom: 0px;
-    margin: auto 0px;
-    height: 180px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    transition: scale 0.2s;
-}
-
-.qh-skinchange-decade-big-skin.original {
-    height: 159px;
-}
-
-.qh-skinchange-decade-big-skin>.primary-avatar {
-    left: 0;
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-    border-radius: 8px;
-    transition-property: opacity, transform;
-    z-index: 62;
-}
-
-.qh-skinchange-decade-big-dialog[data-outcrop-skin='on'] .primary-avatar {
-    height: 96%;
-    clip-path: url(#solo-clip);
-    -webkit-clip-path: url(#solo-clip);
-}
-
-.qh-skinchange-decade-big-skin.unseen>.primary-avatar,
-.qh-skinchange-decade-big-skin.d-skin>.primary-avatar,
-.qh-skinchange-decade-big-skin.d-skin2>.primary-avatar {
-    opacity: 0;
-} */
-
+/*局内换肤小窗武将名*/
 .qhavatar-name {
   display: flex;
   align-items: center;
@@ -1123,63 +839,67 @@
   justify-content: center;
   line-height: 16px;
   text-align: center;
-  /*text-shadow: none; #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;*/
-  left: 26%;
-  top: 24%;
+ /*text-shadow: none; #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;*/
+  left: 0;
+  top: -18%;
   right: 26%;
-  bottom: 1%;
   position: absolute;
   writing-mode: vertical-lr;
 }
-
+/*大图底部皮肤名称主体框*/
 .qhhp-decade-big-wrap {
-  right: 9%;
-  bottom: 6%;
-  width: 8.6em;
-  height: 1.4em;
-  border: #8a8884 1px solid;
-  border-radius: 8px;
+  left: 38%;
+  bottom: 2%;
+  width: 10em;
+  height: 1.6em;
   z-index: 63;
   transition: none;
-  background-color: rgba(1, 1, 1, 0.5);
+  border-style:solid;
+  border-width:5px;
+  border: #9a9894;
 }
-
-.qh-skinchange-decade-big-skin-text {
-  color: #8a8884;
-  width: 90%;
-  height: 90%;
+/*大图底部皮肤名称背景花纹*/
+/*.qh-decade-big-wrap-border{
+    width:95%;
+    height:24%;
+    background-image:url('shousha/pifudiwei.png');
+    display: block;
+    z-index:62;
+    bottom:-26px;
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}*/
+.qh-skinchange-decade-big-skin-text {/*大图底部皮肤名称文字*/
+  color: #f0f0f0;
   text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0), 0 0 15px rgb(0, 0, 0);
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1em;
   text-align: center;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
   margin: auto;
   /* letter-spacing: -2px; */
 }
 
 .qhhp-decade-big-skininfo-wrap {
   left: 9%;
-  bottom: 14%;
-  max-width: 81%;
-  border: #8a8884 1px solid;
+  bottom: 15%;
+  max-width: 100%;
+  border: #8a8884 ;
   border-radius: 8px;
   z-index: 63;
   transition: none;
-  background-color: rgba(1, 1, 1, 0.5);
+  background-color: rgba(1, 1, 1, 0.4);
   display: flex;
   flex-flow: column-reverse wrap;
 }
 
-.qhhp-decade-big-skininfotext-wrap {
+/*.qhhp-decade-big-skininfotext-wrap {
   color: #8a8884;
   text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0), 0 0 15px rgb(0, 0, 0);
   font-size: 1.2em;
   display: block;
   position: relative;
-}
+}大图下方皮肤标明框中的武将名称*/
 
 .qh-image-standard>.qhdynamic-big-wrap {
   display: block;
@@ -1235,25 +955,25 @@
   transition: none;
 }
 
-.qh-skinchange-big-dynamicChange {
-  width: 17%;
-  height: 11%;
-  right: 3%;
-  top: 15%;
-  background-image: url('shousha/chr_detail_skin_normal.png');
+.qh-skinchange-big-dynamicChange {/*皮肤动静态开关*/
+  width: 9%;
+  height: 16.9%;
+  left:-2.58%;
+  top: 48.8%;
+  background-image: url('shousha/chr_detail_skin_dynamic.png');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 63;
-  display: none;
+  z-index: 64;
+  display:none;
 }
 
 .qh-skinchange-big-dynamicChange[toggle=true] {
   display: block;
 }
 
-.qh-skinchange-big-dynamicChange.jing {
-  background-image: url('shousha/chr_detail_skin_dynamic.png');
+.qh-skinchange-big-dynamicChange.jing {/*皮肤动静态开关*/
+  background-image: url('shousha/chr_detail_skin_normal.png');
 }
 
 .qh-skinchange-decade-big-title {
@@ -1310,7 +1030,7 @@
 }
 
 .qh-skinchange-decade-big-skilltaici {
-  width: 90%;
+  width: 50%;
   left: 5%;
   margin-bottom: 20px;
   position: relative;
@@ -1351,86 +1071,6 @@
   vertical-align: middle;
 }
 
-/* .qh-window>.qh-button1 {
-    z-index: 31;
-    left: calc(39.54%);
-    top: calc(14.65%);
-    width: calc(14.05%);
-    height: calc(9.13%);
-    background-image: url('newui_button_rq.png');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    color: white;
-    font-family: 'qh_youyuan';
-    line-height: 100%;
-    font-size: 1.8em;
-}
-
-.qh-window>.qh-button2 {
-    z-index: 31;
-    left: calc(53.44%);
-    top: calc(14.65%);
-    width: calc(14.05%);
-    height: calc(9.13%);
-    background-image: url('newui_button_rq.png');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    color: white;
-    font-family: 'qh_youyuan';
-    line-height: 100%;
-    font-size: 1.8em;
-}
-
-.qh-window>.qh-button3 {
-    z-index: 31;
-    left: calc(67.34%);
-    top: calc(14.65%);
-    width: calc(14.05%);
-    height: calc(9.13%);
-    background-image: url('newui_button_rq.png');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    color: white;
-    font-family: 'qh_youyuan';
-    line-height: 100%;
-    font-size: 1.8em;
-}
-
-.qh-window>.qh-button4 {
-    z-index: 31;
-    left: calc(81.24%);
-    top: calc(14.65%);
-    width: calc(14.05%);
-    height: calc(9.13%);
-    background-image: url('newui_button_rq.png');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    color: white;
-    font-family: 'qh_youyuan';
-    line-height: 100%;
-    font-size: 1.8em;
-}
- */
 .qh-shoushabg>.qh-page-introduce {
   z-index: 31;
   left: calc(2%);
@@ -1445,7 +1085,7 @@
   left: 4%;
   top: 3%;
   width: 94%;
-  height: 97%;
+  height: 80%;
   font-size: 1em;
   letter-spacing: 0.1em;
   display: block;
@@ -1459,29 +1099,28 @@
   left: calc(2%);
   top: 2.7em;
   width: calc(95%);
-  height: calc(95% - 2.7em);
+  height: calc(95% - 6em);
   display: flex;
   overflow: scroll;
   flex-direction: column;
   align-content: center;
 }
 
-.qh-window>.qh-page-skin {
+.qh-window>.qh-page-skin {/*皮肤切换框大图*/
   z-index: 1;
-  left: calc(49.5%);
-  bottom: calc(8.6%);
+  left: calc(49%);
+  bottom: calc(8%);
   width: calc(38%);
-  height: calc(25.6%);
+  height: calc(34.6%);
   display: block;
   transition: all 0.3s linear;
   /* overflow: hidden; */
 }
 
-.qh-page-skin.skinbgfangda {
+/*.qh-page-skin.skinbgfangda {
   height: 38%;
-}
-
-.qh-skinchange-decade-big-dibuhuo {
+}*/
+/*.qh-skinchange-decade-big-dibuhuo {
   width: 100%;
   height: 100%;
   top: 0;
@@ -1492,12 +1131,12 @@
   -webkit-filter: blur(2px);
   z-index: 39;
   pointer-events: none;
-}
+}*/
 
-.qh-page-skin>.qh-page-skin-text {
+.qh-page-skin>.qh-page-skin-text {/*皮肤切换框背景*/
   z-index: 32;
   left: calc(100%);
-  top: calc(0%);
+  top: calc(15%);
   width: calc(100%);
   height: calc(100%);
   display: block;
@@ -1505,7 +1144,7 @@
   background-image: url('shousha/chr_detail_skin_list_bg.png');
 }
 
-.qh-skinchange-shousha-bigarrow {
+.qh-skinchange-shousha-bigarrow {/*皮肤切换左右角标*/
   top: 70px;
   left: 95%;
   width: 5%;
@@ -1536,12 +1175,12 @@
   display: block;
 }
 
-.qh-page-config>.qh-page-config-text {
+.qh-page-config>.qh-page-config-text {/*选项菜单内文字。*/
   z-index: 32;
   left: 20px;
-  top: 8px;
+  top: 4px;
   width: calc(100% - 40px);
-  height: calc(95%);
+  height: calc(80%);
   display: block;
   color: #e3c857;
   overflow: scroll;
@@ -1566,20 +1205,20 @@
   position: static;
   width: 100%;
   display: table;
-  color: #f6dfb5;
+  color: #f0d09b;
   /* overflow: scroll; */
 }
 
-.qh-page-skill>.qh-page-skill-voice {
+/*.qh-page-skill>.qh-page-skill-voice {
   z-index: 33;
-  right: 2.5%;
-  top: 0.6em;
+  right: 5%;
+  top: 2.1em;
   position: absolute;
   width: 2em;
   height: 2em;
   background-size: 100% 100%;
   background-image: url('shousha/chr_spell_list_btn.png');
-}
+}*/
 
 .qh-page-skill-taicibalckbg {
   z-index: 40;
@@ -1590,22 +1229,24 @@
   background-color: black;
   opacity: 0.7;
 }
-
+/*台词页主体*/
 .qh-page-skill-taici {
   z-index: 67;
-  left: calc(50% - 380px);
-  top: calc(50% - 170px);
-  width: 760px;
-  height: 340px;
+ /* left: calc(50% - 380px);*/
+  left: 15.8%;
+ /* top: calc(50% - 170px);*/
+  top:9%;
+  width: calc(38%);
+  height: calc(43%);
   background-size: 100% 100%;
   background-image: url('shousha/TaiciBg.png');
 }
-
+/*台词页内容*/
 .qh-page-skill-taicineirong {
-  left: 30px;
-  top: 30px;
-  width: 700px;
-  height: 275px;
+  left: 0;
+  top: 5px;
+  width: calc(100%);
+  height: calc(95%);
   overflow: scroll;
   /* font-family: 'QH_HYZLSJ'; */
 }
@@ -1627,14 +1268,26 @@
   margin-left: 4px;
   display: table-row;
   position: static;
-  color: #f6ffde;
+  color: linear-gradient(180deg, #f7d78e 0%, #ffe1c1 30%,#e8e8e8 60%);
   font-weight: lighter;
   letter-spacing: 5px;
-  font-size: 17px;
-  filter: drop-shadow(2px 0 0 #453325) drop-shadow(-2px 0 0 #453325) drop-shadow(0 2px 0 #453325) drop-shadow(0 -2px 0 #453325);
+  font-size: 22px;
+ /* filter: drop-shadow(2px 0 0 #453325) drop-shadow(-2px 0 0 #453325) drop-shadow(0 2px 0 #453325) drop-shadow(0 -2px 0 #453325);*/
 }
+.qh-skillTaiciContent::after{
+  content: "";
+  display:inline-block;
+  width:100%;
+  height:25px;
+  background-size: 100% 100%;
+  background: url(shousha/shengyingtiao.png) no-repeat;
+  position:absolute;
+  margin-top: -2px;
+  margin-left: -120px;
+  z-index: -1;
 
-.qh-victoryName {
+}
+/*.qh-victoryName {
   margin-top: -22px;
   position: absolute;
   color: #f6ffde;
@@ -1642,18 +1295,37 @@
   letter-spacing: 5px;
   font-size: 17px;
   filter: drop-shadow(2px 0 0 #453325) drop-shadow(-2px 0 0 #453325) drop-shadow(0 2px 0 #453325) drop-shadow(0 -2px 0 #453325);
+}*/
+.qh-victoryName {
+  margin-left: 4px;
+  display: table-row;
+  position: static;
+  color: #fffaf2;
+  font-weight: lighter;
+  letter-spacing: 5px;
+  font-size: 19px;
 }
+.qh-victoryName::after{
+  content: "";
+  display:inline-block;
+  width:100%;
+  height:25px;
+  background-size: 100% 100%;
+  background: url(shousha/shengyingtiao.png) no-repeat;
+  position:absolute;
+  margin-top: -2px;
+  margin-left: -120px;
+  z-index: -1;
 
+}
 .qh-skillTaicibg {
   display: inline-block;
-  width: 342px;
-  height: 55px;
-
+  width: calc(100%);
+  height: 12%;
   margin-top: 3px;
   margin-bottom: 19px;
-  margin-right: 15px;
   position: static;
-  background: url('shousha/upgrade_item_long_bg.png') no-repeat center / 100% 100%;
+ /* background: url('shousha/upgrade_item_long_bg.png') no-repeat center / 100% 100%;*/
   transition: none;
 }
 
@@ -1671,10 +1343,10 @@
 }
 
 .qh-trumpet {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   left: 5px;
-  top: 8px;
+  top: 6px;
   position: relative;
   background-size: 100% 100%;
   background-image: url('shousha/chr_spell_voice_2.png');
@@ -1684,15 +1356,15 @@
   background-image: url('shousha/chr_spell_voice.png');
 }
 
-.qh-taiciinner {
-  width: 290px;
-  height: 30px;
+.qh-taiciinner {/*台词内容*/
+  width: auto;
+  height: 6%;
   left: 47px;
-  top: -31px;
-  color: #e4e0d5;
+  top: -25px;
+  color: #fff4d5;
   position: relative;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 18px;  
+ /* font-weight: bold;*/
   display: table-cell;
   vertical-align: middle;
 }
@@ -1715,40 +1387,41 @@
   display: block;
   left: 0;
   top: 12px;
-  /* width: 100px;
-    height: 150px; */
+  /*width: 300px;
+    height: 150px;*/
   background-size: cover;
   background-position: center;
   border-radius: 8px;
 }
 
 .qh-skinchange-shousha-big-skin.sel {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
-.qh-page-skinavatarlevel {
-  width: 42%;
+.qh-page-skinavatarlevel {/*选择皮肤选项品质*/
+  width: 66%;
   height: 29%;
-  right: -2%;
-  top: 8px;
+  top:60%;
+  left:15%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   z-index: 98;
   transition: none;
 }
 
-.qh-skinchange-shousha-big-skin>.primary-avatar {
-  left: 3.8%;
+.qh-skinchange-shousha-big-skin>.primary-avatar {/*皮肤选项框*/
+  left: 6%;
   top: auto;
-  bottom: 1.7%;
+  bottom: 1.5%;
   width: 90.5%;
   height: 90%;
   opacity: 1;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
-  border-radius: 8%;
+  border-radius:4%;
   transition-property: opacity, transform;
+  box-shadow:2px 2px 1px rgba(1, 1, 1, 0.3);
   z-index: 61;
 }
 
@@ -1784,145 +1457,77 @@
 }
 
 .qhcamp-shousha-big-back {
-  left: -4.2%;
+  z-index:92;
+  left: -2%;
   bottom: -4%;
   height: 101%;
   width: 107%;
-  background-image: url('../image/decoration/skinFrm1.png');
   background-size: 100% 100%;
   transition: none;
   pointer-events: none;
 }
-
+.qhcamp-shousha-big-back[data-pinzhi='普通'] {
+  background-image: url('../image/decoration/skinFrm1.png');
+}
 .qhcamp-shousha-big-back[data-pinzhi='精良'] {
   background-image: url('../image/decoration/skinFrm2.png');
 }
-
 .qhcamp-shousha-big-back[data-pinzhi='精品'] {
   background-image: url('../image/decoration/skinFrm3.png');
 }
-
 .qhcamp-shousha-big-back[data-pinzhi='稀有'] {
   background-image: url('../image/decoration/skinFrm3.png');
 }
-
 .qhcamp-shousha-big-back[data-pinzhi='史诗'] {
   background-image: url('../image/decoration/skinFrm4.png');
 }
-
 .qhcamp-shousha-big-back[data-pinzhi='传说'] {
   background-image: url('../image/decoration/skinFrm5.png');
 }
-
-/* .qhcamp-shousha-back[data-pinzhi='史诗'].dong {
-    height: 113%;
-    width: 104%;
-    left: -3.7%;
-    z-index: 94;
-    background-image: url('../image/decoration/skin_dynamic_frame4.png');
+.qhcamp-shousha-big-back[data-pinzhi='绝版'] {
+  background-image: url('../image/decoration/skinFrm8.png');
+}
+.qhcamp-shousha-big-back[data-pinzhi='动态'] {
+  background-image: url('../image/decoration/skinFrm7.png');
+}
+.qhcamp-shousha-big-back[data-pinzhi='限定'] {
+  background-image: url('../image/decoration/skinFrm6.png');
 }
 
-.qhcamp-shousha-back[data-pinzhi='传说'].dong {
-    height: 113%;
-    width: 103%;
-    left: -3%;
-    z-index: 94;
-    background-image: url('../image/decoration/skin_dynamic_frame5.png');
-} */
 
-/* .qhcamp-shousha-back.dong+.qhhp-shousha-wrap {
-    bottom: -11%;
-}
-
-.qhcamp-shousha-back.dong~.qh-skinchange-skin-shousha-default {
-    bottom: -13%;
-} */
-
-/* .qhcamp-big-wrap.shousha>.qhcamp-name {
-    font-display: swap;
-    font-size: 26px;
-    width: 160%;
-    height: 50%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: none;
-    text-shadow: 0 0 5px #e0ea33, 0 0 15px #e0ea33, 0 0 25px #e0ea33;
-}
-
-.qhcamp-big-wrap.shousha[data-camp='wei']>.qhcamp-name {
-    text-shadow: 0 0 5px rgb(50, 50, 255), 0 0 10px rgb(120, 120, 255), 0 0 15px rgb(100, 100, 255);
-}
-
-.qhcamp-big-wrap.shousha[data-camp='shu']>.qhcamp-name {
-    text-shadow: 0 0 5px rgb(255, 100, 100), 0 0 10px rgb(255, 50, 50), 0 0 15px rgb(255, 50, 50);
-}
-
-.qhcamp-big-wrap.shousha[data-camp='wu']>.qhcamp-name {
-    text-shadow: 0 0 5px rgb(100, 233, 100), 0 0 10px rgb(50, 255, 50), 0 0 15px rgb(50, 255, 50);
-}
-
-.qhcamp-big-wrap.shousha[data-camp='qun']>.qhcamp-name {
-    text-shadow: 0 0 5px rgb(170, 170, 170), 0 0 10px rgb(118, 118, 118), 0 0 15px rgb(118, 118, 118);
-}
-
-.qhcamp-big-wrap.shousha[data-camp='shen']>.qhcamp-name {
-    text-shadow: 0 0 5px rgb(255, 200, 0), 0 0 10px rgb(255, 200, 0), 0 0 15px rgb(255, 200, 0);
-}
-
-.qhcamp-big-wrap.shousha>.qhavatar-name {
-    display: block;
-    font-size: 20px;
-    writing-mode: lr-tb;
-    line-height: 22px;
-    font-family: shousha;
-    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
-    left: 43%;
-    top: 49%;
-    width: 8%;
-    position: absolute;
-} */
-
-.qhhp-shousha-big-wrap {
-  right: 5%;
-  bottom: 1%;
-  width: 40px;
-  height: 32px;
-  border: #8a8884 1px solid;
-  border-radius: 8px;
+.qhhp-shousha-big-wrap{
+  top:15px;
+  left:4px;
+  width: 20%;
+  height:60%;
   z-index: 80;
   transition: none;
-  background-color: rgba(1, 1, 1, 0.5);
 }
-
-.qh-skinchange-shousha-big-skin-text {
+.qh-skinchange-shousha-big-skin-text {/*皮肤选项框皮肤名称*/
+  z-index: 80;
   writing-mode: lr-tb;
-  color: #8a8884;
+  color: #993d27;
   width: 90%;
-  height: 90%;
-  text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0), 0 0 15px rgb(0, 0, 0);
+  height: auto;
   font-size: 15px;
-  line-height: 15px;
-  font-weight: bold;
+  font-weight: 550;
+ /* text-shadow:1px 1px rgba(1, 1, 1, 0.8);*/
   text-align: center;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
+  left: 12%;
+  top: 0;
   margin: auto;
-  /* letter-spacing: -2px; */
+  opacity: 1;
+  padding:4px 0 4px 0;
+  border-radius: 4px 0 8px 0;
+ background: linear-gradient(to bottom, rgb(229,173,78), rgb(244,214,96));
 }
+  /* letter-spacing: -2px; */
 
 .qh-dynamictrue {
   z-index: 80;
-  right: -8%;
-  top: 30%;
-  width: 40px;
+  right:5%;
+  bottom: 3%;
+  width: 20px;
   height: 40px;
   background-size: 100% 100%;
   background-image: url('shousha/dynamic.png');

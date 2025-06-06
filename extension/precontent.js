@@ -1,5 +1,5 @@
 import { lib,get,_status,ui,game,ai } from './noname.js';
-
+import {} from './pq_precontent.js';
 export let PRECONTENT = function (config) {
     //-----Q-----END-----
     // @ts-ignore
@@ -24,6 +24,7 @@ export let PRECONTENT = function (config) {
           // @ts-ignore
           lib.qhly_viewskin = {};
         }
+        /*舍弃了其他皮肤窗口*/
         // @ts-ignore
         lib.qhly_viewskin['xuanwujianghu'] = {
           name: '玄武江湖',
@@ -60,7 +61,7 @@ export let PRECONTENT = function (config) {
         };
     
         // @ts-ignore
-        lib.qhly_viewskin['sanguo'] = {
+       lib.qhly_viewskin['sanguo'] = {
           name: '三国',
           onchange: function () {
             game.saveConfig('qhly_viewskin_css', 'newui_sanguo');
@@ -134,7 +135,7 @@ export let PRECONTENT = function (config) {
         };
     
         // @ts-ignore
-        lib.qhly_viewskin['ranqi'] = {
+       lib.qhly_viewskin['ranqi'] = {
           name: '染柒的世界',
           buttonImage: 'extension/千幻聆音/theme/rq/newui_button_rq.png',
           buttonPressedImage: 'extension/千幻聆音/theme/rq/newui_button_selected_rq.png',
@@ -207,7 +208,7 @@ export let PRECONTENT = function (config) {
         };
 
         // @ts-ignore
-        lib.qhly_viewskin['newyear'] = {
+       lib.qhly_viewskin['newyear'] = {
           name: '水墨龙吟-新春',
           whr: 2.2028,
           isQiLayout: true,
@@ -233,7 +234,6 @@ export let PRECONTENT = function (config) {
     
           }
         };
-    
         // @ts-ignore
         lib.qhly_viewskin['decade'] = {
           name: '十周年',
@@ -264,7 +264,7 @@ export let PRECONTENT = function (config) {
     
         // @ts-ignore
         lib.qhly_viewskin['shousha'] = {
-          name: '手杀',
+          name: '无名杀',
           whr: 2.22,
           buttonImage: 'extension/千幻聆音/theme/shousha/chr_detail_skill_button_normal.jpg',
           buttonPressedImage: 'extension/千幻聆音/theme/shousha/chr_detail_skill_button_selected.jpg',
@@ -279,7 +279,6 @@ export let PRECONTENT = function (config) {
           skinPagePlayAudioButtonImage: 'extension/千幻聆音/theme/wz/qhly_pic_playaudiobutton_wz.png',
           hasJs:true,
           onchange: function () {
-            game.saveConfig('qhly_viewskin_css', 'newui_ss');
           },
           // @ts-ignore
           changeViewSkin: function (view) {
@@ -290,9 +289,9 @@ export let PRECONTENT = function (config) {
     
           }
         };
-    
-        // @ts-ignore
-        lib.qhly_viewskin['lolbig'] = {
+      
+       // @ts-ignore
+       lib.qhly_viewskin['lolbig'] = {
           name: '海克斯科技',
           whr: 1.77778,
           isLolBigLayout: true,

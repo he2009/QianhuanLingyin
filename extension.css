@@ -87,7 +87,22 @@
   z-index: 65;
   display: none;
 }
-
+.qhavatar-name {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: yuanli;
+  text-align: center;
+  left: 26%;
+  top: 24%;
+  right: 26%;
+  bottom: 1%;
+  display: flex;
+  position: absolute;
+  margin-left: 10px; /* 向右偏移10像素 */
+}
 .qh-skinchange-decade-arrow.left {
   transform: rotateY(180deg);
   left: 3.5%;
@@ -137,9 +152,9 @@
 }
 
 .qh-skinchange-skin-default {
-  left: -21px;
+  left: -25px;
   width: 129%;
-  bottom: -21%;
+  bottom: -25%;
   height: 130%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -191,17 +206,17 @@
 
 .qhcamp-wrap {
   display: block;
-  left: -22px;
-  top: -11px;
+  left: -15%;
+  top: 0;
   width: 45px;
-  height: 146px;
+  height: 100%;
   transition: none;
   z-index: 88;
 }
 
-.qh-skinchange-decade-dialog[data-outcrop-skin='on'] .qhcamp-wrap {
+/*.qh-skinchange-decade-dialog[data-outcrop-skin='on'] .qhcamp-wrap {
   top: -16px;
-}
+}*/
 
 .qhcamp-back {
   display: flex;
@@ -212,14 +227,15 @@
   line-height: 16px;
   font-family: yuanli;
   text-align: center;
+  height:90%;
+  width:52%;
   /*text-shadow: none; #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;*/
-  left: 26%;
-  top: 24%;
+  left: 25%;
+  top: 10%;
   right: 26%;
-  bottom: 1%;
   position: absolute;
+  border-radius:10px 0 0 10px;
   background: linear-gradient(to bottom, rgb(155, 129, 108), rgb(73, 71, 58));
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0% 90%);
 }
 
 .qhcamp-wrap[data-camp='wei']>.qhcamp-back {
@@ -281,13 +297,13 @@
 .qhcamp-wrap[data-camp='xin']>.qhcamp-back {
   background: linear-gradient(to bottom, rgb(112, 52, 126), rgb(52, 18, 55));
 }
-
+/*小窗武将等级框*/
 .qhcamp-wrap>.qhcamp-border {
   display: block;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: -3%;
   width: 100%;
-  height: 100%;
+  height: 85%;
   position: absolute;
   background-image: url('image/decoration/border_camp.png');
   background-size: 100% 100%;
@@ -295,21 +311,24 @@
 }
 
 .qhcamp-wrap[data-border-level='one']>.qhcamp-border {
-  background-image: url('image/decoration/border_camp1.png');
-}
-
-.qhcamp-wrap[data-border-level='two']>.qhcamp-border {
   background-image: url('image/decoration/border_camp2.png');
 }
 
-.qhcamp-wrap[data-border-level='three']>.qhcamp-border {
+.qhcamp-wrap[data-border-level='two']>.qhcamp-border {
   background-image: url('image/decoration/border_camp3.png');
 }
 
-.qhcamp-wrap[data-border-level='four']>.qhcamp-border {
+.qhcamp-wrap[data-border-level='three']>.qhcamp-border {
   background-image: url('image/decoration/border_camp4.png');
 }
 
+.qhcamp-wrap[data-border-level='four']>.qhcamp-border {
+  background-image: url('image/decoration/border_camp5.png');
+}
+.qhcamp-wrap[data-border-level='five']>.qhcamp-border {
+  background-image: url('image/decoration/border_camp5.png');
+}
+/*势力字*/
 .qhcamp-wrap>.qhcamp-name {
   font-family: xinwei, xingkai;
   font-display: swap;
@@ -325,6 +344,8 @@
   background-repeat: no-repeat;
   background-position: center;
   transition: none;
+  left:0;
+  top:-5%;
   text-shadow: 0 0 5px #e0ea33, 0 0 15px #e0ea33, 0 0 25px #e0ea33;
 }
 
@@ -348,34 +369,17 @@
   text-shadow: 0 0 5px rgb(255, 200, 0), 0 0 10px rgb(255, 200, 0), 0 0 15px rgb(255, 200, 0);
 }
 
-.qhavatar-name {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  font-size: 18px;
-  line-height: 22px;
-  font-family: yuanli;
-  text-align: center;
-  /*text-shadow: none; #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;*/
-  left: 26%;
-  top: 16%;
-  right: 26%;
-  bottom: 1%;
-  position: absolute;
-}
 
 .qhhp-wrap {
   display: block;
+  bottom:0;
   right: -4.5px;
-  bottom: -5px;
-  width: 15px;
-  height: 55px;
-  border-width: 24px 5px 21px 82px;
+  width: 20px;
+  height: 80px;
   border-style: solid;
-  border-color: transparent;
-  border-image-source: url('image/decoration/border_hp.png');
-  border-image-slice: 32 6 25 113 fill;
+  border-color: #7d573a;
+  border-radius:10px 0 10px 0;
+  background-color: #7d573a;
   pointer-events: none;
   transition-property: transform, opacity, height;
   transition-duration: 0.1s;
@@ -383,7 +387,7 @@
   z-index: 88;
 }
 
-.qhhp-wrap[data-border-level='one'] {
+/*.qhhp-wrap[data-border-level='one'] {
   border-image-source: url('image/decoration/border_hp1.png');
 }
 
@@ -398,10 +402,10 @@
 .qhhp-wrap[data-border-level='four'] {
   border-image-source: url('image/decoration/border_hp4.png');
 }
-
+*/
 .qh-skinchange-decade-skin-text {
   writing-mode: lr-tb;
-  color: #debf88;
+  color: #fff5ee;
   width: 100%;
   height: 100%;
   font-family: yuanli;
@@ -409,7 +413,7 @@
   font-size: 18px;
   text-align: center;
   left: -1px;
-  top: -9px;
+  top: 0;
   /* letter-spacing: -2px; */
 }
 
@@ -447,12 +451,12 @@
   height: 112%;
   -webkit-clip-path: url(#dskin-clip);
 }
-
+/*小窗动静皮肤切换*/
 .qh-skinchange-dynamicChange {
   width: 90%;
   height: 35%;
   left: 4%;
-  top: 39%;
+  top: 95%;
   background-image: url('theme/decade/useDongtai.png');
   background-size: 79% 40%;
   background-position: center;
@@ -504,7 +508,7 @@
   overflow: hidden;
 }
 
-.qh-skinchange-decade-autoskinborder {
+/*.qh-skinchange-decade-autoskinborder {
   left: 0;
   width: 100%;
   bottom: 0;
@@ -514,11 +518,11 @@
   z-index: 41;
   background-image: url('theme/decade/dc_autoskinborder.png');
 }
-
+*/
 .qh-skinchange-decade-autoskinitem {
   left: calc(-67%);
   width: 139px;
-  bottom: 1%;
+  bottom: -12%;
   height: 27px;
   background-size: 100% 100%;
   background-position: 100%;
@@ -756,7 +760,6 @@
 .qh-skinchange-shousha-dialog[data-outcrop-skin='on'] .qh-skinchange-shousha-skin {
   height: 73%;
 }
-
 .qh-skinchange-shousha-skin.unseen>.primary-avatar,
 .qh-skinchange-shousha-skin.d-skin>.primary-avatar,
 .qh-skinchange-shousha-skin.d-skin2>.primary-avatar {
@@ -1811,35 +1814,44 @@
   animation: qhly-playerwindowbtn2 0.1s linear forwards;
   position: absolute;
 }
-
+/*双形态转换按钮*/
 .qhly-skinChangebutton0 {
-  position: relative;
-  width: 15%;
-  height: auto;
+  z-index: 98;
+  position: absolute;
+  width: 16%;
+  height: 115%;
   background-repeat: no-repeat;
-  margin-left: 14%;
-  top: 0;
+  margin-right: 95%;
+  margin-top: -50%;
   background-size: 100% 100%;
+  background-position: center;
   background-image: url('image/skin1.png');
 }
-
+.qhly-skinChangebutton0.sel{
+  background-image: url('image/skin3.png');
+}
 .qhly-skinChangebutton1 {
-  position: relative;
-  width: 15%;
-  height: auto;
+  z-index: 98;
+  position: absolute;
+  width: 16%;
+  height: 115%;
   background-repeat: no-repeat;
-  margin-left: 14%;
-  top: 0;
+  margin-right: 95%;
+  margin-top: -25%;
   background-size: 100% 100%;
+  background-position: center;
+  background-image: url('image/skin4.png');
+}
+.qhly-skinChangebutton1.sel{
   background-image: url('image/skin2.png');
 }
-
+/*动皮截图按钮*/
 .qh-domtoimage {
   right: 0%;
   top: -5%;
   width: 50px;
   height: 50px;
-  background-image: url(image/camera.png);
+  background-image: url('image/camera.png');
   background-size: 80% 80%;
   background-repeat: no-repeat;
   background-position: center;
