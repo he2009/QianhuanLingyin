@@ -1,9 +1,7 @@
 // @ts-ignore
-import {lib,get,_status,ui,game,ai} from './noname.js';
-
+import { lib,get,_status,ui,game,ai } from './noname.js';
 export let CONFIG = {
-    /*
-    "qhly_newui":{
+  /*  "qhly_newui":{
         "name":"新UI",
         "intro":"打开此选项，将使用新版千幻UI。",
         "init":lib.config.qhly_newui === undefined ? true:lib.config.qhly_newui,
@@ -20,7 +18,7 @@ export let CONFIG = {
       "name": "UI套装",
       "intro": "设置UI套装样式。",
       "item": {},
-      "init": lib.config.qhly_currentViewSkin === undefined ? 'xuanwujianghu' : lib.config.qhly_currentViewSkin,
+      "init": lib.config.qhly_currentViewSkin === undefined ? 'shousha' : lib.config.qhly_currentViewSkin,
       onclick: function (item) {
         // @ts-ignore
         if (lib.qhly_viewskin[item] && lib.qhly_viewskin[item].onchange) {
@@ -33,6 +31,72 @@ export let CONFIG = {
           game.reload();
         }
       }
+    },
+    "qhly_shousha":{
+       "name":"<font size='5' color='blue'>无名杀主题样式设置》</font>",
+       "clear": true,
+    },
+    "qhly_nonamestyle":{
+    "name":"风格切换",
+    "intro": "更换无名杀主题的样式。",
+    "init": lib.config.qhly_nonamestyle === undefined ? "新手杀样式" : lib.config.qhly_nonamestyle,
+    "item":{
+      "xin":"新手杀样式",
+      "Elysia":"爱莉希雅样式",
+       "old":"手杀原样式",
+    /*   "liuying":"星穹&流萤样式",
+      "xuanwu":"玄武江湖样式",
+      "wukong":"黑神话样式",
+      "sanguo":"三足鼎立样式",
+      "daojian":"刀剑神使样式",*/
+  },
+      onclick: function (item) {
+        game.saveConfig('extension_千幻聆音_qhly_nonamestyle', item);
+        game.saveConfig('qhly_nonamestyle', item);
+      // @ts-ignore
+        if (lib.config.qhly_currentViewSkin == 'shousha'){
+          switch(lib.config.qhly_nonamestyle){
+            case 'xin':
+              // @ts-ignore
+              game.saveConfig('qhly_viewskin_css','newui_ss');break;
+            case 'Elysia':
+              // @ts-ignore
+              game.saveConfig('qhly_viewskin_css','newui_Elysia');
+              game.playAudio('../extension/千幻聆音/audio/hello_Elysia.mp3');break;   
+            case 'old':
+              // @ts-ignore
+              game.saveConfig('qhly_viewskin_css','newui_ss_old');break;
+            case'liuying':
+              //@ts-ignore
+              game.saveConfig('qhly_viewskin_css','newui_liuying');break;
+            case'xuanwu':
+              //@ts-ignore
+              game.saveConfig('qhly_viewskin_css','newui_xuanwu');break;
+            case'wukong':
+              //@ts-ignore
+              game.saveConfig('qhly_viewskin_css','newui_wukong');break;
+            case'sanguo':
+              //@ts-ignore
+              game.saveConfig('qhly_viewskin_css','newui_sanguo');break;
+            case'daojian':
+              //@ts-ignore
+              game.saveConfig('qhly_viewskin_css','newui_daojian');break;
+            default:
+              // @ts-ignore
+              game.saveConfig('qhly_viewskin_css','newui_ss');break;
+          }
+        }else{
+          alert("请检查ui套装是否为无名杀");
+          return;
+        };
+        if (confirm("重启游戏以应用新UI？")) {
+        if(lib.config.qhly_nonamestyle == 'Elysia'){
+        setTimeout(game.reload,1300);
+        }else{
+         game.reload();
+        }
+        }
+      }
     },
     "qhly_layoutFitX": {
       "name": "横向拉伸适应",
@@ -696,7 +760,7 @@ export let CONFIG = {
         game.saveConfig('qhly_modemusicconfig_' + get.mode(), item);
       }
     },
-    "qhly_shuimolingyin": {
+  /*"qhly_shuimolingyin": {
       "name": "<font size='5' color='blue'>水墨龙吟相关设置》</font>",
       "clear": true,
     },
@@ -873,7 +937,7 @@ export let CONFIG = {
         game.saveConfig('extension_千幻聆音_qhly_lolshilizihao', item);
         game.saveConfig('qhly_lolshilizihao', item);
       }
-    },
+    },*/
     "qhly_jianrongxing": {
       "name": "<font size='5' color='blue'>兼容性相关设置》</font>",
       "clear": true,
@@ -933,4 +997,105 @@ export let CONFIG = {
         }
       }
     },
+    //
+            "GXNR": {
+                "name": "更新内容",
+                "init": "xin",
+                "unfrequent": true,
+                "item": {
+                    "xin": "点击查看",
+                },
+                "textMenu": function (node, link) {
+                    lib.setScroll(node.parentNode);
+                    node.parentNode.style.transform = "translateY(-100px)";
+                    node.parentNode.style.height = "200px";
+                    node.parentNode.style.width = "320px";
+                    switch (link) {
+                        case "xin":
+                            node.innerHTML = "<img style=width:100% src=" + lib.assetURL + "extension/皮肤切换/gengxin/1.06_更新.png>"
+                            break;
+                    }
+                },
+            },
+            // "backupFileDui": {
+            //     name: "<div><button class='engBtn' onclick='skinSwitch.backupFileDui()'>备份十周年文件</button></div>",
+            //     clear: true
+            // },
+            // "ImportFileDui": {
+            //     name: "<div><button id='importFileDui' class='engBtn' onclick='skinSwitch.modifyFileDui()'>导入十周年文件</button> </div>",
+            //     clear: true
+            // },
+            "previewDynamic": {
+                name: "<div><button onclick='skinSwitch.previewDynamic()'>预览spine动画(资源文件放入asset文件中)</button></div>",
+                clear: true
+            },
+            "resetArchiveDynamicSkin": {
+                name: "<button id='resetDynamicBtn' class='engBtn' type='button' onclick='skinSwitch.resetDynamicData()' >重置动皮存档</button>",
+                intro: "当你更换的dynamicSkin.js与上一个版本内容差距较大时，需重置",
+                clear: true
+            },
+            // 'closeXYPosAdjust': {
+            //     name: "关闭位置微调",
+            //     "init": true,
+            //     "intro": "预览窗口空间有点不够,这个微调功能用到比较少,所以可以选择关闭",
+            // },
+            "showEditMenu": {
+                "name": "编辑动态皮肤加入顶部菜单",
+                "init": false,
+                "intro": "将编辑动态皮肤参数界面加入顶部菜单栏",
+            },
+            "showPreviewDynamicMenu": {
+                name: "预览spine加入顶部菜单",
+                "init": false,
+                "intro": "将预览动态皮肤参数界面加入顶部菜单栏",
+            },
+            'useDynamic': {
+                name: "使用出框功能",
+                "init": true,
+                "intro": "如果设备不支持离屏渲染或者使用EngEx或D扩展出框, 请关闭此出框功能",
+            },
+            // 'replaceDecadeAni': {
+            //     name: "支持播放ol4.0特效",
+            //     "init": false,
+            //     "intro": "替换十周年UI的decadeUi.animation对象后允许播放3.8,4.0的特效",
+            // },
+            'isAttackFlipX': {
+                name: "AI出框是否翻转X轴",
+                "init": false,
+                "intro": "AI在屏幕左侧(中央往左小于50%)出框是否翻转X轴, 也可以在动皮参数处添加参数控制单个动皮的出框翻转",
+            },
+            'cugDynamicBg': {
+                name: "是否裁剪动态背景",
+                "init": false,
+                "intro": "为了更好的适配动皮露头, 在待机处可以裁剪动态背景",
+            },
+            'genDynamicSkin': {
+                name: "<div><button onclick='skinSwitch.genDynamicSkin()'>转换D动态参数(生成的新文件在扩展文件夹下)</button></div>",
+                clear: true
+            }, // generateDynamicFile
+            'genDyTempFile': {
+                name: "<div><button onclick='skinSwitch.genDyTempFile()'>自动生成动皮模板参数</button></div>",
+                clear: true,
+                info: '动皮文件夹结构是 --> 武将中文名(武将id也行)/皮肤名称/骨骼  <--- 形式的话, 可以自动根据当前已填写的参数动态生成动皮模板'
+            },
+
+            'previewSkinsDynamic': {
+                name: "预览角色使用动皮",
+                "init": true,
+                "intro": "预览皮肤使用动皮",
+            },
+            'enableQianhuanAudio': {
+                name: "启用千幻语音集成",
+                "init": true,
+                "intro": "皮肤切换后自动读取千幻聆音的语音资源，需要安装千幻聆音扩展",
+            },
+            'attackEffect': {
+                name: "启用攻击和互动出框",
+                "init": "on",
+                "intro": "是否启用攻击和互动出框效果",
+                "item": {
+                    "on": "开启",
+                    "off": "关闭"
+                }
+            },
 };
